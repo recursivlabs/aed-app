@@ -59,7 +59,7 @@ const META_BLOCK = `<!--minds-meta-->
     <meta name="description" content="${META_DESCRIPTION}" />
     <link rel="canonical" href="${SITE_ORIGIN}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Minds" />
+    <meta property="og:site_name" content="AED Connect" />
     <meta property="og:title" content="${META_TITLE}" />
     <meta property="og:description" content="${META_DESCRIPTION}" />
     <meta property="og:url" content="${SITE_ORIGIN}" />
@@ -71,7 +71,7 @@ const META_BLOCK = `<!--minds-meta-->
     <meta name="twitter:title" content="${META_TITLE}" />
     <meta name="twitter:description" content="${META_DESCRIPTION}" />
     <meta name="twitter:image" content="${SITE_ORIGIN}/og-default.png" />
-    <meta name="theme-color" content="#010100" />
+    <meta name="theme-color" content="#242B63" />
     <!--/minds-meta-->`;
 if (!html.includes('<!--minds-meta-->')) {
   // The stock template's bare <title>Minds</title> is replaced by the block.
@@ -93,21 +93,21 @@ const STYLE = `<style id="minds-boot-style">
    when the scrollbar appears/disappears as content loads — the "scrollbar tweaks
    and changes sizes" glitch. */
 html{scrollbar-gutter:stable}
-#minds-boot{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#010100;transition:opacity .35s ease;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+#minds-boot{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#242B63;transition:opacity .35s ease;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
 #minds-boot .mb-wm{color:#f2f2f4;font-size:30px;font-weight:600;letter-spacing:-.5px;margin-bottom:20px;opacity:.96;animation:mb-breathe 2.6s ease-in-out infinite}
 /* A slim indeterminate bar, not a spinner. A spinning ring reads as "stuck";
    a travelling highlight reads as "arriving", and it sits still enough to feel
    calm on a fast connection where it only shows for a few frames. */
 #minds-boot .mb-sp{position:relative;width:132px;height:2px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden}
-#minds-boot .mb-sp::after{content:'';position:absolute;top:0;bottom:0;left:0;width:40%;border-radius:2px;background:#f2c94c;animation:mb-slide 1.5s cubic-bezier(.4,0,.2,1) infinite}
+#minds-boot .mb-sp::after{content:'';position:absolute;top:0;bottom:0;left:0;width:40%;border-radius:2px;background:#E9A83A;animation:mb-slide 1.5s cubic-bezier(.4,0,.2,1) infinite}
 @keyframes mb-slide{0%{transform:translateX(-100%)}100%{transform:translateX(350%)}}
 @keyframes mb-breathe{0%,100%{opacity:.96}50%{opacity:.72}}
-@media (prefers-color-scheme:light){#minds-boot{background:#fff}#minds-boot .mb-wm{color:#08080a}#minds-boot .mb-sp{background:rgba(0,0,0,.09)}#minds-boot .mb-sp::after{background:#c9962a}}
+@media (prefers-color-scheme:light){#minds-boot{background:#fff}#minds-boot .mb-wm{color:#08080a}#minds-boot .mb-sp{background:rgba(0,0,0,.09)}#minds-boot .mb-sp::after{background:#B07D18}}
 /* Motion-sensitive readers get a steady partial bar instead of movement. */
 @media (prefers-reduced-motion:reduce){#minds-boot .mb-wm{animation:none}#minds-boot .mb-sp::after{animation:none;width:45%}}
 </style>`;
 
-const SHELL = `<div id="minds-boot" aria-hidden="true"><div class="mb-wm">Minds</div><div class="mb-sp"></div></div>`;
+const SHELL = `<div id="minds-boot" aria-hidden="true"><div class="mb-wm">AED</div><div class="mb-sp"></div></div>`;
 
 const FAILSAFE = `<script>setTimeout(function(){var b=document.getElementById('minds-boot');if(b){b.style.opacity='0';setTimeout(function(){b.parentNode&&b.parentNode.removeChild(b)},400)}},20000)</script>`;
 

@@ -91,7 +91,7 @@ export interface ColorTokens {
  * seam. Keep these two values identical; if the dark palette moves, move this
  * and the app.json splash backgroundColor with it.
  */
-export const SPLASH_BG = '#010100';
+export const SPLASH_BG = '#242B63';
 
 export const darkColors: ColorTokens = {
   bg: '#12163A',

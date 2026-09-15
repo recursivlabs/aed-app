@@ -1168,17 +1168,12 @@ export default function LandingScreen() {
 
   return (
     <View style={{ flex: 1, overflow: 'hidden' }}>
-      {/* Night sky — the only sky. No crossfade layer above it, and the base
-          colour is the splash colour, so the handoff from the launch image is
-          a continuation rather than a cut. */}
+      {/* Flat AED navy. No animation: this is a trade association member
+          platform, and the launch image hands off to the same solid colour. */}
       <View style={{
         position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
         backgroundColor: SPLASH_BG,
       }}>
-        <Starfield />
-        <ShootingStarField />
-        <UfoField />
-        <DarkGlow />
       </View>
 
       {/* Content — KeyboardAvoidingView shifts the form above the
@@ -1237,15 +1232,14 @@ export default function LandingScreen() {
             accessibilityRole="header"
             aria-level={1}
             style={{
-              fontSize: 18,
-              letterSpacing: 3,
-              fontWeight: '200',
-              textTransform: 'lowercase',
-              opacity: c.taglineOpacity,
+              fontSize: 20,
+              letterSpacing: 0.2,
+              fontWeight: '500',
+              opacity: 0.92,
               marginTop: spacing.md,
             }}
           >
-            igniting the equipment industry
+            Welcome to AED Connect
           </Text>
 
         </View>
