@@ -15,6 +15,6 @@
     <circle cx="23" cy="37" r="14.50" fill="#E9A83A"/>
     <circle cx="23" cy="37" r="6.40" fill="#12163A"/>
     <text x="50" y="47" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="36" letter-spacing="-0.5" fill="#FFFFFF">AED</text>
-    <text x="51.5" y="59.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="6.1" letter-spacing="0.62" fill="#B9BED6">ASSOCIATED EQUIPMENT DISTRIBUTORS</text>
+    <text x="51.5" y="59.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="5.4" letter-spacing="0.42" fill="#B9BED6">ASSOCIATED EQUIPMENT DISTRIBUTORS</text>
   </g>
 </svg>
