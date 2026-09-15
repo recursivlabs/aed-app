@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="192px" height="74px" viewBox="0 0 192 74" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <title>AED</title>
-  <g fill="none" fill-rule="evenodd">
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(0.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(36.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(72.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(108.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(144.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(180.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(216.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(252.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(288.00 23 37)"/>
-    <rect x="20.40" y="17.50" width="5.2" height="8.20" rx="1.1" fill="#E9A83A" transform="rotate(324.00 23 37)"/>
-    <circle cx="23" cy="37" r="14.50" fill="#E9A83A"/>
-    <circle cx="23" cy="37" r="6.40" fill="#12163A"/>
-    <text x="50" y="47" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="700" font-size="36" letter-spacing="-0.5" fill="#FFFFFF">AED</text>
-    <text x="51.5" y="59.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-weight="600" font-size="5.4" letter-spacing="0.42" fill="#B9BED6">ASSOCIATED EQUIPMENT DISTRIBUTORS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6132 1300" width="349px" height="74px">
+  <title>AED Connect</title>
+  <g transform="translate(0 1005) scale(1 -1)">
+    <path transform="translate(0.0 0)" d="M19 0 275 710H455L711 0H553L501 151H228L176 0ZM271 276H459L365 550Z" fill="#FFFFFF"/>
+    <path transform="translate(710.0 0)" d="M74 0V710H568V582H226V419H556V293H226V128H576V0Z" fill="#FFFFFF"/>
+    <path transform="translate(1312.0 0)" d="M74 0V710H319Q491 710 584.5 617.5Q678 525 678 354Q678 184 586.0 92.0Q494 0 325 0ZM226 128H319Q422 128 471.5 183.5Q521 239 521 355Q521 470 471.5 526.0Q422 582 319 582H226Z" fill="#FFFFFF"/>
+    <path transform="translate(2208.0 0)" d="M359 -16Q265 -16 195.0 28.5Q125 73 86.0 156.0Q47 239 47 354Q47 469 86.0 552.5Q125 636 195.0 681.0Q265 726 359 726Q483 726 553.5 660.0Q624 594 646 483L574 478Q559 561 505.5 610.0Q452 659 359 659Q286 659 232.0 622.5Q178 586 148.0 517.5Q118 449 118 354Q118 259 148.0 191.0Q178 123 232.0 87.0Q286 51 359 51Q456 51 511.5 103.5Q567 156 580 248L652 243Q633 126 558.0 55.0Q483 -16 359 -16Z" fill="#E9A83A"/>
+    <path transform="translate(2908.0 0)" d="M283 -12Q211 -12 158.0 22.0Q105 56 75.5 118.0Q46 180 46 265Q46 350 75.5 412.0Q105 474 158.0 508.0Q211 542 283 542Q355 542 408.0 508.0Q461 474 490.0 412.0Q519 350 519 265Q519 180 490.0 118.0Q461 56 408.0 22.0Q355 -12 283 -12ZM283 51Q361 51 405.5 108.5Q450 166 450 265Q450 365 405.5 422.0Q361 479 283 479Q204 479 159.5 422.0Q115 365 115 265Q115 166 159.5 108.5Q204 51 283 51Z" fill="#E9A83A"/>
+    <path transform="translate(3479.0 0)" d="M82 0V530H142L144 428Q163 485 209.0 513.5Q255 542 313 542Q374 542 413.0 515.0Q452 488 471.5 442.5Q491 397 491 341V0H425V317Q425 395 396.0 439.0Q367 483 299 483Q231 483 189.5 439.0Q148 395 148 317V0Z" fill="#E9A83A"/>
+    <path transform="translate(4058.0 0)" d="M82 0V530H142L144 428Q163 485 209.0 513.5Q255 542 313 542Q374 542 413.0 515.0Q452 488 471.5 442.5Q491 397 491 341V0H425V317Q425 395 396.0 439.0Q367 483 299 483Q231 483 189.5 439.0Q148 395 148 317V0Z" fill="#E9A83A"/>
+    <path transform="translate(4637.0 0)" d="M285 -12Q209 -12 156.0 23.5Q103 59 74.5 121.5Q46 184 46 265Q46 346 74.0 408.5Q102 471 154.5 506.5Q207 542 281 542Q352 542 403.5 508.0Q455 474 483.0 412.0Q511 350 511 267V246H115Q119 152 164.0 101.5Q209 51 285 51Q343 51 380.0 79.0Q417 107 431 153L502 148Q482 78 425.0 33.0Q368 -12 285 -12ZM115 305H439Q434 390 392.0 434.5Q350 479 281 479Q212 479 168.0 433.5Q124 388 115 305Z" fill="#E9A83A"/>
+    <path transform="translate(5200.0 0)" d="M283 -12Q209 -12 156.0 23.5Q103 59 74.5 121.5Q46 184 46 265Q46 346 74.5 408.5Q103 471 156.0 506.5Q209 542 283 542Q374 542 431.5 493.0Q489 444 504 360L435 356Q423 414 383.5 446.5Q344 479 283 479Q205 479 160.0 422.0Q115 365 115 265Q115 166 160.0 108.5Q205 51 283 51Q344 51 384.5 85.5Q425 120 436 185L505 180Q490 94 432.0 41.0Q374 -12 283 -12Z" fill="#E9A83A"/>
+    <path transform="translate(5747.0 0)" d="M267 0Q140 0 140 124V471H57V530H140V654H206V530H343V471H206V126Q206 89 222.5 74.0Q239 59 273 59H343V0Z" fill="#E9A83A"/>
   </g>
 </svg>

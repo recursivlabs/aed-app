@@ -1202,8 +1202,8 @@ export default function LandingScreen() {
           <Image
             source={LOGO_DARK}
             style={{
-              width: isMobile ? 259 : 356,
-              height: isMobile ? 80 : 110,
+              width: isMobile ? 250 : 330,
+              height: isMobile ? 53 : 70,
               marginBottom: isMobile ? spacing.lg : spacing['3xl'],
             }}
             contentFit="contain"

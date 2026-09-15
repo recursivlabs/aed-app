@@ -299,16 +299,17 @@ export function SideNav({ collapsed, onToggle }: SideNavProps) {
                 // the bulb ~34px tall — the old mark's optical height.
                 <Image
                   source={isDark ? BULB_DARK : BULB}
-                  style={{ width: 40, height: 40 }}
+                  style={{ width: 44, height: 44 }}
                   contentFit="contain"
                   accessibilityLabel="AED Connect"
                 />
               ) : (
-                // Expanded: full Minds wordmark logo, matched to the theme.
-                // Bulb + lowercase wordmark, 3.24:1 — keep the ratio.
+                // Expanded: the AED Connect wordmark, set in Geist and converted
+                // to paths so it renders identically everywhere. 4.72:1 — keep
+                // the ratio or the letterforms distort.
                 <Image
                   source={isDark ? LOGO_DARK : LOGO_LIGHT}
-                  style={{ width: 91, height: 35 }}
+                  style={{ width: 170, height: 36 }}
                   contentFit="contain"
                   accessibilityLabel="AED Connect"
                 />
