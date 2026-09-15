@@ -1516,10 +1516,18 @@ export function useRelatedGroups(communityId?: string | null, limit = 5) {
       try {
         const http = (sdk.posts as any)?.client;
         if (!http?.get) return;
+        // `/communities/:id/related` is NETWORK-wide, so on a tenant app it
+        // recommends groups from other tenants. `/communities` is scoped to
+        // this project, so sibling groups come from here instead: same shape,
+        // never another tenant's content.
         const res: any = await fetchDeduped(`req:${cacheKey}`, () =>
-          http.get(`/communities/${encodeURIComponent(communityId)}/related`, { limit }));
+          http.get('/communities', { limit: 100 }));
         if (cancelled) return;
-        const data = Array.isArray(res?.data) ? res.data : [];
+        const all = Array.isArray(res?.data) ? res.data : [];
+        const data = all
+          .filter((c: any) => c?.id && c.id !== communityId)
+          .sort((a: any, b: any) => (b?.post_count || 0) - (a?.post_count || 0))
+          .slice(0, limit);
         setGroups(data);
         setCache(cacheKey, data);
       } catch {
