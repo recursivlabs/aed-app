@@ -25,16 +25,19 @@ export default function CommunitiesScreen() {
   const router = useRouter();
   const colors = useColors();
   const { user, isLoading: authLoading } = useAuth();
-  // memberOnly: the server returns exactly the caller's accepted communities.
-  // At 96K network communities, "mine" can't be derived client-side anymore —
-  // the caller's groups are almost never in page one of the directory.
-  const { communities, loading, fetchedOnce } = useCommunities(100, { memberOnly: true });
+  // AED lists EVERY committee, not just the ones you joined. An association's
+  // committees are a published structure people browse and opt into, so a
+  // member-only list shows a new member an empty page on the day they join —
+  // which is the opposite of the point. Joined ones sort to the top.
+  const { communities, loading, fetchedOnce } = useCommunities(100, { memberOnly: false });
 
-  // Gate on fetchedOnce so a stale cached is_member=true can't flash a community
-  // you've left (mirrors the sidebar's guard). is_member filter kept as belt —
-  // server rows are already all-mine.
   const mine = (fetchedOnce ? (communities || []) : [])
-    .filter((c: any) => c.is_member === true || c.isMember === true);
+    .slice()
+    .sort((a: any, b: any) => {
+      const am = a.is_member === true || a.isMember === true ? 0 : 1;
+      const bm = b.is_member === true || b.isMember === true ? 0 : 1;
+      return am - bm || (a.name || '').localeCompare(b.name || '');
+    });
 
   // Client-side search over the caller's joined communities (the list is small
   // enough — the server returns exactly "mine", capped at 100).
