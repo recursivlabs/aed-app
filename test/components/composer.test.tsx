@@ -33,8 +33,8 @@ vi.mock('../../lib/hooks', async (importOriginal) => {
       communities: [
         {
           id: 'community-1',
-          name: 'Minds Builders',
-          description: 'People building Minds',
+          name: 'AED Connecters',
+          description: 'People building AED Connect',
         },
       ],
       loading: false,
@@ -73,10 +73,10 @@ describe('composer', () => {
     expect(screen.getByRole('dialog', { name: 'Choose post audience' })).toBeInTheDocument();
     expect(screen.getByRole('radiogroup', { name: 'Post audience options' })).toBeInTheDocument();
     expect(screen.getByRole('radio', { name: 'Global' })).toHaveAttribute('aria-checked', 'true');
-    expect(screen.getByRole('radio', { name: 'Minds Builders' })).toHaveAttribute('aria-checked', 'false');
+    expect(screen.getByRole('radio', { name: 'AED Connecters' })).toHaveAttribute('aria-checked', 'false');
 
-    await userEvent.click(screen.getByRole('radio', { name: 'Minds Builders' }));
-    expect(screen.getByRole('button', { name: 'Post audience: Minds Builders' }))
+    await userEvent.click(screen.getByRole('radio', { name: 'AED Connecters' }));
+    expect(screen.getByRole('button', { name: 'Post audience: AED Connecters' }))
       .toHaveAttribute('aria-expanded', 'false');
 
     await userEvent.click(nsfw);

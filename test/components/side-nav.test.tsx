@@ -86,14 +86,14 @@ describe('SideNav', () => {
     render(<SideNav collapsed onToggle={() => {}} />);
 
     for (const label of [
-      'Minds home',
+      'AED Connect home',
       'Home',
       'Discover',
       'Chat',
       'Notifications',
       'Live',
       'Groups',
-      'Minds AI',
+      'AED Assistant',
       'Wallet',
       'Bookmarks',
       'Settings',

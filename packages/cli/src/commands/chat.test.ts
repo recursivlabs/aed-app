@@ -44,7 +44,7 @@ describe('minds chat', () => {
         members: [{ id: 'user-1', name: 'Alice', username: 'alice', image: null, is_ai: false }],
         last_message: {
           id: 'message-1',
-          content: 'Hello\nfrom Minds',
+          content: 'Hello\nfrom AED Connect',
           sender_name: 'Alice',
           created_at: '2026-08-26T12:00:00.000Z',
         },
@@ -57,7 +57,7 @@ describe('minds chat', () => {
 
     expect(sdk.conversations).toHaveBeenCalledWith({ limit: 10, offset: 2 });
     expect(log.info).toHaveBeenCalledWith('conversation-1  Alice');
-    expect(log.dim).toHaveBeenCalledWith('  Alice: Hello from Minds');
+    expect(log.dim).toHaveBeenCalledWith('  Alice: Hello from AED Connect');
   });
 
   it('prints messages oldest to newest for terminal reading', async () => {

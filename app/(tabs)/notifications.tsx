@@ -355,11 +355,11 @@ export default function NotificationsScreen() {
             <Ionicons name="notifications-outline" size={34} color={colors.accent} />
           </View>
           <Text variant="h2" color={colors.text} align="center">
-            {category === 'system' ? 'Nothing from Minds Build yet' : 'Nothing here yet'}
+            {category === 'system' ? 'Nothing from AED Connect yet' : 'Nothing here yet'}
           </Text>
           <Text variant="body" color={colors.textSecondary} align="center" style={{ maxWidth: 320, lineHeight: 24 }}>
             {category === 'system'
-              ? 'Minds Build is where you run your own AI agents. Their updates land here. Pro members get more agents and more runs.'
+              ? 'AED Connect is where you run your own AI agents. Their updates land here. Pro members get more agents and more runs.'
               : 'Create a post or reply to others to start receiving notifications. Likes, replies, follows, and mentions all show up here.'}
           </Text>
           {category === 'system' ? (
@@ -367,7 +367,7 @@ export default function NotificationsScreen() {
               <Pressable
                 onPress={() => { Linking.openURL('https://build.minds.com').catch(() => {}); }}
                 accessibilityRole="link"
-                accessibilityLabel="Open Minds Build"
+                accessibilityLabel="Open AED Connect"
                 style={({ pressed }) => ({
                   flexDirection: 'row', alignItems: 'center', gap: spacing.xs,
                   paddingVertical: spacing.sm + 2, paddingHorizontal: spacing.lg,

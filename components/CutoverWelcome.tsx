@@ -182,7 +182,7 @@ export function CutoverWelcome({
           <ScrollView
             accessibilityRole="alert"
             accessibilityViewIsModal
-            accessibilityLabel="Welcome back to Minds"
+            accessibilityLabel="Welcome back to AED Connect"
             bounces={false}
             showsVerticalScrollIndicator={false}
             style={{
@@ -228,7 +228,7 @@ export function CutoverWelcome({
             <View style={{ gap: spacing.sm }}>
               <Pressable
                 accessibilityRole="button"
-                accessibilityLabel="Continue to Minds"
+                accessibilityLabel="Continue to AED Connect"
                 onPress={dismissModal}
                 style={({ pressed }) => ({
                   minHeight: 44,

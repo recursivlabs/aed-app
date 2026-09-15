@@ -558,7 +558,7 @@ export function useTrendingPosts(limit = 5) {
 
 /**
  * Top posts by the SAME recommender the For You feed uses (sdk.curator.forYou),
- * so "Top on Minds" and the sidebar "Trending Posts" are just other views of For
+ * so "Top on AED Connect" and the sidebar "Trending Posts" are just other views of For
  * You — quality-ranked (real relationships + engagement, reported/moderated
  * content down-ranked) instead of the raw score-ranked post list, which surfaced
  * spam, AI-slop, and stale content. One cached fetch, shared across surfaces.

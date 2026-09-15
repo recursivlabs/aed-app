@@ -94,7 +94,7 @@ const STYLE = `<style id="minds-boot-style">
    and changes sizes" glitch. */
 html{scrollbar-gutter:stable}
 #minds-boot{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#242B63;transition:opacity .35s ease;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
-#minds-boot .mb-wm{color:#f2f2f4;font-size:30px;font-weight:600;letter-spacing:-.5px;margin-bottom:20px;opacity:.96;animation:mb-breathe 2.6s ease-in-out infinite}
+#minds-boot .mb-wm{color:#f2f2f4;font-size:26px;font-weight:600;letter-spacing:-.3px;margin-bottom:20px;opacity:.96;animation:mb-breathe 2.6s ease-in-out infinite}
 /* A slim indeterminate bar, not a spinner. A spinning ring reads as "stuck";
    a travelling highlight reads as "arriving", and it sits still enough to feel
    calm on a fast connection where it only shows for a few frames. */
@@ -107,7 +107,7 @@ html{scrollbar-gutter:stable}
 @media (prefers-reduced-motion:reduce){#minds-boot .mb-wm{animation:none}#minds-boot .mb-sp::after{animation:none;width:45%}}
 </style>`;
 
-const SHELL = `<div id="minds-boot" aria-hidden="true"><div class="mb-wm">AED</div><div class="mb-sp"></div></div>`;
+const SHELL = `<div id="minds-boot" aria-hidden="true"><div class="mb-wm">AED Connect</div><div class="mb-sp"></div></div>`;
 
 const FAILSAFE = `<script>setTimeout(function(){var b=document.getElementById('minds-boot');if(b){b.style.opacity='0';setTimeout(function(){b.parentNode&&b.parentNode.removeChild(b)},400)}},20000)</script>`;
 

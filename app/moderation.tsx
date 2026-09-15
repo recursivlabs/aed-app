@@ -93,7 +93,7 @@ function StatusPill({ status }: { status: string }) {
 
 export default function ModerationScreen() {
   const colors = useColors();
-  usePageTitle('Moderation & appeals — Minds');
+  usePageTitle('Moderation & appeals — AED Connect');
   const { sdk, user, accountRestriction, signOut } = useAuth();
   const publicSdk = React.useMemo(() => createPublicSdk(), []);
   const [principles, setPrinciples] = React.useState<Principle[]>([]);

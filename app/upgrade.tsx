@@ -45,7 +45,7 @@ const PLANS: Plan[] = [
     badge: 'Best value',
     perks: [
       'Everything in Plus',
-      'Build apps and agents with Minds AI',
+      'Build apps and agents with AED Assistant',
       'Any model: GPT, Claude, Gemini',
       '190 hours of video, in 1080p',
     ],

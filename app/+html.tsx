@@ -23,7 +23,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
 
         {/* PW(2) deploy discriminator. §2 requires BOTH strings committed BEFORE
             the deploy, because a worker who picks the string afterwards chooses
-            the very thing the rollback verifier greps for. "Minds" appears in
+            the very thing the rollback verifier greps for. "AED Connect" appears in
             every build and is non-diagnostic in both directions (§5.20) — this
             is not. Candidate: the marker below. Previous: the bundle hash
             index-07628618e137db722807402c1c649219, live as of 2026-07-31. */}

@@ -3,7 +3,7 @@ import { looksLikeLegacyHtml, sanitizeLegacyHtml, stripHtmlToText } from '../mar
 
 describe('looksLikeLegacyHtml', () => {
   it('detects legacy article HTML', () => {
-    expect(looksLikeLegacyHtml('<p>Welcome to Minds</p>')).toBe(true);
+    expect(looksLikeLegacyHtml('<p>Welcome to AED Connect</p>')).toBe(true);
     expect(looksLikeLegacyHtml('via <a href="https://x.com">link</a>')).toBe(true);
     expect(looksLikeLegacyHtml('<img src="https://cdn.minds.com/x.jpg">')).toBe(true);
   });

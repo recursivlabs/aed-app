@@ -5,7 +5,7 @@ import {
   isLiveStreamAvailable,
 } from '../live';
 
-describe('Minds Live spectator contract', () => {
+describe('AED Live spectator contract', () => {
   it('uses the adapted production spectator endpoints', () => {
     expect(LIVE_STREAM_URL).toBe('https://streams.battlechat.live/cmaf/battle/index.m3u8');
     expect(LIVE_STREAM_METADATA_URL).toBe('https://streams.battlechat.live/json_battle.js');

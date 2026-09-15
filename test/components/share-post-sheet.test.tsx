@@ -38,7 +38,7 @@ describe('SharePostSheet', () => {
     expect(screen.getByRole('heading', { name: 'Share post' })).toBeInTheDocument();
     expect(screen.getByText('Anyone with this link can open the post.')).toBeInTheDocument();
     expect(screen.queryByPlaceholderText('Search people…')).not.toBeInTheDocument();
-    expect(screen.queryByText('Minds AI')).not.toBeInTheDocument();
+    expect(screen.queryByText('AED Assistant')).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: 'Copy post link' }));
 
@@ -52,9 +52,9 @@ describe('SharePostSheet', () => {
 
     render(<SharePostSheet visible post={{ id: 'post-1' }} onClose={vi.fn()} />);
 
-    expect(screen.getByText('Send in Minds')).toBeInTheDocument();
+    expect(screen.getByText('Send in AED Connect')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Search people…')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'Send post to Minds AI' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Send post to AED Assistant' })).toBeInTheDocument();
   });
 
   it('reports a recipient-search outage and recovers in place', async () => {
@@ -125,17 +125,17 @@ describe('SharePostSheet', () => {
     expect(onClose).not.toHaveBeenCalled();
   });
 
-  it('reports an unavailable Minds AI instead of silently clearing the spinner', async () => {
+  it('reports an unavailable AED Assistant instead of silently clearing the spinner', async () => {
     const onClose = vi.fn();
     mocks.auth.sdk = { chat: { dm: vi.fn(), send: vi.fn() } };
     mocks.auth.user = { id: 'viewer-1' };
     mocks.resolvePersonalAgent.mockResolvedValue(null);
 
     render(<SharePostSheet visible post={{ id: 'post-1' }} onClose={onClose} />);
-    fireEvent.click(screen.getByRole('button', { name: 'Send post to Minds AI' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Send post to AED Assistant' }));
 
     await waitFor(() => expect(mocks.toast).toHaveBeenCalledWith(
-      'Could not send post to Minds AI. Try again.',
+      'Could not send post to AED Assistant. Try again.',
       'error',
     ));
     expect(onClose).not.toHaveBeenCalled();

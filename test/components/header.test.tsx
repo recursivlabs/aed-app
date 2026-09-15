@@ -61,7 +61,7 @@ describe('Header accessibility', () => {
     headerMocks.drawer = { open };
     render(<Header />);
 
-    expect(screen.getByRole('link', { name: 'Minds home' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'AED Connect home' })).toBeInTheDocument();
     await userEvent.click(screen.getByRole('button', { name: 'Open navigation menu' }));
     expect(open).toHaveBeenCalledTimes(1);
   });

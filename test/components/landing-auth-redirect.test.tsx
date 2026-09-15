@@ -69,7 +69,7 @@ describe('landing authentication return path', () => {
     __setLocalSearchParams({});
     render(<LandingScreen />);
 
-    const explore = screen.getByRole('link', { name: 'Explore Minds without signing in' });
+    const explore = screen.getByRole('link', { name: 'Explore AED Connect without signing in' });
 
     expect(explore).toHaveAttribute('href', '/discover');
     expect(authMock.sendOtp).not.toHaveBeenCalled();

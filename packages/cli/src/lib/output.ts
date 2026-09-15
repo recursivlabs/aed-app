@@ -30,6 +30,6 @@ export function exitWithError(msg: string, code = 1): never {
 export function banner(): void {
   console.log();
   console.log(pc.bold(pc.cyan('  minds')));
-  console.log(pc.dim('  the Minds platform CLI'));
+  console.log(pc.dim('  the AED Connect platform CLI'));
   console.log();
 }

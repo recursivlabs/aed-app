@@ -81,7 +81,7 @@ export default function MindsAIScreen() {
     try {
       const result = await askAgent(sdk, router, q);
       if (result === 'failed') {
-        toast.show('Could not start Minds AI. Try again.', 'error');
+        toast.show('Could not start AED Assistant. Try again.', 'error');
       }
     } finally {
       setBusy(false);
@@ -129,10 +129,10 @@ export default function MindsAIScreen() {
             <TextInput
               value={prompt}
               onChangeText={setPrompt}
-              accessibilityLabel="Ask Minds AI"
+              accessibilityLabel="Ask AED Assistant"
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
-              placeholder="Ask Minds AI anything…"
+              placeholder="Ask AED Assistant anything…"
               placeholderTextColor={colors.textMuted}
               multiline
               onSubmitEditing={submit}
@@ -178,7 +178,7 @@ export default function MindsAIScreen() {
                 onPress={submit}
                 disabled={!prompt.trim() || busy}
                 accessibilityRole="button"
-                accessibilityLabel="Send prompt to Minds AI"
+                accessibilityLabel="Send prompt to AED Assistant"
                 accessibilityState={{ disabled: !prompt.trim() || busy }}
                 style={{
                   width: 38, height: 38, borderRadius: 19, alignItems: 'center', justifyContent: 'center',
@@ -196,7 +196,7 @@ export default function MindsAIScreen() {
           <Pressable
             onPress={openBuild}
             accessibilityRole="button"
-            accessibilityLabel="Build with Minds AI"
+            accessibilityLabel="Build with AED Assistant"
             style={({ hovered }: any) => ({
               width: '100%', flexDirection: 'row', alignItems: 'center', gap: spacing.md,
               borderWidth: 1, borderColor: hovered ? colors.accent : colors.border,

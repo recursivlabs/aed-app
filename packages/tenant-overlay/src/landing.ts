@@ -34,7 +34,7 @@ function safeUrl(url: string, fallback: string): string {
 }
 
 export function renderLanding(net: NetworkRecord): string | null {
-  const name = escHtml(net.name || 'Minds');
+  const name = escHtml(net.name || 'AED Connect');
   const fqdn = net.fqdn ? escHtml(net.fqdn) : 'build.minds.com';
   const appUrl = safeUrl(net.fqdn ? `https://${net.fqdn}/login` : '/login', '/login');
   const canonical = net.fqdn ? `<link rel="canonical" href="https://${fqdn}" />` : '';

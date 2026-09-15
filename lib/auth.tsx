@@ -681,7 +681,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     } catch {}
 
-    // Greet the new user: ensure their "Minds AI" personal agent + welcome DM.
+    // Greet the new user: ensure their "AED Assistant" personal agent + welcome DM.
     // Fire-and-forget — onboarding must never block or fail sign-up.
     void bootstrapMindsAI(createAuthedSdk(result.apiKey), {
       id: result.user?.id,

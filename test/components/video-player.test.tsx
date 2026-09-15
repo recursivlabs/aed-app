@@ -63,12 +63,12 @@ describe('VideoPlayer web autoplay', () => {
     render(
       <VideoPlayer
         uri="https://media.example/live.m3u8"
-        accessibilityLabel="Minds Live stream"
+        accessibilityLabel="AED Live stream"
         autoplay={false}
       />,
     );
 
-    expect(screen.getByLabelText('Minds Live stream')).toHaveAttribute('controls');
+    expect(screen.getByLabelText('AED Live stream')).toHaveAttribute('controls');
   });
 
   it('replaces a failed progressive player with an unavailable state', async () => {

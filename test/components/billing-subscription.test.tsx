@@ -61,7 +61,7 @@ describe('consumer subscription billing', () => {
     render(<BillingScreen />);
 
     await waitFor(() => expect(screen.getByText('Pro')).toBeInTheDocument());
-    expect(screen.getByText('Your Pro access is attached to this Minds account.')).toBeInTheDocument();
+    expect(screen.getByText('Your Pro access is attached to this AED Connect account.')).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Manage subscription' })).not.toBeInTheDocument();
   });
 

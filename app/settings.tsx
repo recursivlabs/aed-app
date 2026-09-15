@@ -162,7 +162,7 @@ function friendlyUA(ua?: string | null): string {
     /Chrome\//.test(ua) ? 'Chrome' :
     /Firefox\//.test(ua) ? 'Firefox' :
     /Safari\//.test(ua) ? 'Safari' :
-    /Expo|okhttp|Dart|axios|node-fetch|node/i.test(ua) ? 'Minds app' : null;
+    /Expo|okhttp|Dart|axios|node-fetch|node/i.test(ua) ? 'AED Connect app' : null;
   const os =
     /iPhone|iPad|iOS/.test(ua) ? 'iOS' :
     /Android/.test(ua) ? 'Android' :
@@ -1212,7 +1212,7 @@ export default function SettingsScreen() {
       case 'notifications':
         return (
           <Section>
-            <SettingRow first icon="notifications-outline" label="In-app notifications" sublabel="Show notifications inside Minds" right={<Toggle label="In-app notifications" value={notifPrefs.inApp} onValueChange={v => toggleNotif('inApp', v)} />} />
+            <SettingRow first icon="notifications-outline" label="In-app notifications" sublabel="Show notifications inside AED Connect" right={<Toggle label="In-app notifications" value={notifPrefs.inApp} onValueChange={v => toggleNotif('inApp', v)} />} />
             <SettingRow icon="phone-portrait-outline" label="Push notifications" sublabel="Send alerts to your devices" right={<Toggle label="Push notifications" value={notifPrefs.push} onValueChange={v => toggleNotif('push', v)} />} />
             <SettingRow icon="mail-outline" label="Email notifications" sublabel="Send notifications to your email" right={<Toggle label="Email notifications" value={notifPrefs.email} onValueChange={v => toggleNotif('email', v)} />} />
           </Section>
@@ -1325,7 +1325,7 @@ export default function SettingsScreen() {
             <SettingRow
               icon="hardware-chip-outline"
               label="Personal AI agent"
-              sublabel="Shows your personal agent as a DM in your inbox. Off: no agent in your inbox. For You and the rest of Minds work the same either way."
+              sublabel="Shows your personal agent as a DM in your inbox. Off: no agent in your inbox. For You and the rest of AED Connect work the same either way."
               right={<Toggle label="Personal AI agent" value={getPreference('aiEnabled')} onValueChange={v => { setContentPref('aiEnabled', v, 'ai_enabled'); }} />}
             />
           </Section>
@@ -1380,7 +1380,7 @@ export default function SettingsScreen() {
             <SettingRow
               first
               icon="help-buoy-outline"
-              label="Message Minds Support"
+              label="Message AED Connect Support"
               sublabel="Get help from our support assistant, any time"
               onPress={async () => {
                 if (!sdk) return;
@@ -1410,7 +1410,7 @@ export default function SettingsScreen() {
                   legacy network and never naming PostHog, so it satisfies a
                   status-code check and not the requirement. */}
               <SettingRow icon="lock-closed-outline" label="Privacy Policy" onPress={() => Linking.openURL('https://minds.com/p/privacy')} />
-              <SettingRow icon="shield-checkmark-outline" label="How Minds 2.0 uses your data" sublabel="What this app collects, and what leaves it" onPress={() => router.push('/privacy' as any)} />
+              <SettingRow icon="shield-checkmark-outline" label="How AED Connect uses your data" sublabel="What this app collects, and what leaves it" onPress={() => router.push('/privacy' as any)} />
               <SettingRow icon="people-circle-outline" label="Community Guidelines" onPress={() => Linking.openURL('https://minds.com/p/community-guidelines')} />
               <SettingRow
                 icon="shield-outline"

@@ -80,13 +80,13 @@ describe('CutoverWelcome', () => {
   it('shows the welcome once, then leaves the 30-day banner', async () => {
     renderWelcome();
 
-    expect(await screen.findByRole('alert', { name: 'Welcome back to Minds' })).toBeInTheDocument();
+    expect(await screen.findByRole('alert', { name: 'Welcome back to AED Connect' })).toBeInTheDocument();
     expect(screen.queryByRole('summary')).not.toBeInTheDocument();
 
-    await userEvent.click(screen.getByRole('button', { name: 'Continue to Minds' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Continue to AED Connect' }));
 
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
-    expect(await screen.findByRole('summary')).toHaveTextContent('Welcome to Minds 2.0');
+    expect(await screen.findByRole('summary')).toHaveTextContent('Welcome to AED Connect');
     expect(state.stored.get(cutoverWelcomeKeys('returning-user').modalDismissed)).toBe('1');
 
     await userEvent.click(screen.getByRole('button', { name: 'Dismiss welcome banner' }));
@@ -145,10 +145,10 @@ describe('CutoverWelcome', () => {
     state.readGate = null;
     rerender(<CutoverWelcome launchAt={LAUNCH_AT} now={DURING_LAUNCH} />);
 
-    expect(await screen.findByRole('alert', { name: 'Welcome back to Minds' })).toBeInTheDocument();
+    expect(await screen.findByRole('alert', { name: 'Welcome back to AED Connect' })).toBeInTheDocument();
     releaseOldRead?.();
     await waitFor(() => {
-      expect(screen.getByRole('alert', { name: 'Welcome back to Minds' })).toBeInTheDocument();
+      expect(screen.getByRole('alert', { name: 'Welcome back to AED Connect' })).toBeInTheDocument();
     });
   });
 
@@ -161,7 +161,7 @@ describe('CutoverWelcome', () => {
       expect(screen.queryByRole('alert')).not.toBeInTheDocument();
 
       await act(async () => { await vi.advanceTimersByTimeAsync(1_001); });
-      expect(screen.getByRole('alert', { name: 'Welcome back to Minds' })).toBeInTheDocument();
+      expect(screen.getByRole('alert', { name: 'Welcome back to AED Connect' })).toBeInTheDocument();
 
       await act(async () => { await vi.advanceTimersByTimeAsync(30 * 24 * 60 * 60 * 1000); });
       expect(screen.queryByRole('alert')).not.toBeInTheDocument();

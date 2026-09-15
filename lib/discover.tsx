@@ -127,7 +127,7 @@ function postSource(post: any): string {
   if (post.source_name) return String(post.source_name);
   if (post.sourceName) return String(post.sourceName);
   const url = post.external_url || post.externalUrl || extractUrl(post.content);
-  return getDomain(url) || 'Minds';
+  return getDomain(url) || 'AED Connect';
 }
 export function postAuthorName(post: any): string {
   return post.author?.name || post.author?.username || postSource(post);

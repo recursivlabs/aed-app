@@ -92,7 +92,7 @@ describe('Discover landing accessibility', () => {
 
     expect(screen.getByRole('link', { name: 'Open post by Story Author: A useful update.' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'View posts tagged #accessibility' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'See all Top on Minds today' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'See all Top on AED Connect today' })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: 'View profile for Ada Lovelace' })).not.toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'View profile for Grace Hopper' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'View group Open Builders' })).toBeInTheDocument();

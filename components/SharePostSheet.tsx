@@ -119,7 +119,7 @@ export function SharePostSheet({ visible, post, onClose }: { visible: boolean; p
   const sharePostExternally = React.useCallback(async () => {
     try {
       if (Platform.OS === 'web' && typeof navigator !== 'undefined' && navigator.share) {
-        await navigator.share({ title: post?.title || 'Post on Minds', url: postUrl });
+        await navigator.share({ title: post?.title || 'Post on AED Connect', url: postUrl });
       } else {
         await Share.share({ message: postUrl, url: postUrl });
       }
@@ -164,7 +164,7 @@ export function SharePostSheet({ visible, post, onClose }: { visible: boolean; p
       onClose();
       router.push(chatConversationHref(convoId, { focused: '1' }) as any);
     } catch {
-      toast.show('Could not send post to Minds AI. Try again.', 'error');
+      toast.show('Could not send post to AED Assistant. Try again.', 'error');
     } finally { setBusy(null); }
   }, [sdk, busy, post, postUrl, onClose, router, toast]);
 
@@ -282,7 +282,7 @@ export function SharePostSheet({ visible, post, onClose }: { visible: boolean; p
                 keyExtractor={(item: any, i) => String(item.id ?? i)}
                 keyboardShouldPersistTaps="always"
                 ListHeaderComponent={!query.trim() ? (
-                  <Row id="ai" name="Minds AI" ai subtitle="Get context about this post — your default" onPress={sendToAi} />
+                  <Row id="ai" name="AED Assistant" ai subtitle="Get context about this post — your default" onPress={sendToAi} />
                 ) : null}
                 ListEmptyComponent={searchEmpty}
                 renderItem={({ item }: any) => (

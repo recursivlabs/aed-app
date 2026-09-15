@@ -3,7 +3,7 @@ import { pickLegacyToken } from '../lib/legacySessionParse';
 
 const oauth = {
   authType: 0,
-  user: { guid: '100000000000000134', username: 'john', email: ' John@Minds.com ' },
+  user: { guid: '100000000000000134', username: 'john', email: ' John@AED Connect.com ' },
   accessToken: { access_token: 'a'.repeat(40), access_token_expires: 1790000000 },
   refreshToken: { refresh_token: 'r'.repeat(40), refresh_token_expires: 1800000000 },
 };

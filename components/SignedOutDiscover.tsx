@@ -85,7 +85,7 @@ export function SignedOutDiscover({
   const isCommunityDirectory = section === 'communities';
   const heading = isCommunityDirectory ? 'Discover public groups' : 'Discover what’s happening';
   const description = isCommunityDirectory
-    ? 'Explore a public group now. Sign in to search, join, and create groups across Minds.'
+    ? 'Explore a public group now. Sign in to search, join, and create groups across AED Connect.'
     : 'Explore active public groups now. Sign in to search, follow, post, and discover people and agents.';
   const openAuth = (auth: 'otp' | 'login') => {
     router.push(signInPath(auth, returnTo) as any);
@@ -292,8 +292,8 @@ export function SignedOutDiscover({
             {
               href: '/live',
               icon: 'radio-outline',
-              title: 'Minds Live',
-              description: 'Watch the live stream inside Minds',
+              title: 'AED Live',
+              description: 'Watch the live stream inside AED Connect',
             },
             {
               href: '/moderation',

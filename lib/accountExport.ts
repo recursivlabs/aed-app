@@ -115,7 +115,7 @@ async function saveAccountExportForNative(response: Response): Promise<string> {
     await Sharing.shareAsync(file.uri, {
       mimeType: 'application/zip',
       UTI: 'com.pkware.zip-archive',
-      dialogTitle: 'Save your Minds account export',
+      dialogTitle: 'Save your AED Connect account export',
     });
     return filename;
   } catch (error) {

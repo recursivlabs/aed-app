@@ -13,7 +13,7 @@ describe('Text heading semantics', () => {
   ] as const)('exposes the %s visual variant as heading level %i', (variant, level) => {
     render(<Text variant={variant}>Launch Minds</Text>);
 
-    expect(screen.getByRole('heading', { level, name: 'Launch Minds' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level, name: 'Launch AED Connect' })).toBeInTheDocument();
   });
 
   it('does not turn ordinary text into a heading', () => {

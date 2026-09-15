@@ -1235,7 +1235,7 @@ export default function CreateScreen() {
                       onPress={() => { setSelectedCommunity(null); setShowCommunityPicker(false); }}
                       accessibilityRole="radio"
                       accessibilityLabel="Global"
-                      accessibilityHint="Post to everyone on Minds"
+                      accessibilityHint="Post to everyone on AED Connect"
                       accessibilityState={{ checked: !selectedCommunity }}
                       {...(Platform.OS === 'web' ? { 'aria-checked': !selectedCommunity } as any : {})}
                       style={({ pressed }) => ({

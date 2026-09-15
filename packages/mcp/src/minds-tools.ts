@@ -42,7 +42,7 @@ export function registerMindsUtilityTools(
 
   registry.tool(
     "get_network_config",
-    "Get public Minds network configuration: branding, features, auth methods, and capabilities",
+    "Get public AED Connect network configuration: branding, features, auth methods, and capabilities",
     [],
     {},
     async () => {
@@ -77,14 +77,14 @@ export function registerMindsUtilityTools(
 
   registry.tool(
     "get_public_moderation_log",
-    "Read the privacy-safe public Minds moderation action log and principles",
+    "Read the privacy-safe public AED Connect moderation action log and principles",
     [],
     {
       network_id: z
         .string()
         .uuid()
         .optional()
-        .describe("Network UUID; defaults to the main Minds network"),
+        .describe("Network UUID; defaults to the main AED Connect network"),
       limit: z.number().int().min(1).max(100).optional(),
       offset: z.number().int().min(0).optional(),
     },

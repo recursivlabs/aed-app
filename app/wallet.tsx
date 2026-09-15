@@ -190,7 +190,7 @@ export default function WalletScreen() {
     const titles: Record<string, string> = {
       reward: 'Daily reward', wire: amt >= 0 ? 'Tip received' : 'Tip sent',
       boost: 'Boost', boost_refund: 'Boost refund', withdraw: 'Withdrawal to on-chain',
-      withdraw_refund: 'Withdrawal refund', plus: 'Minds+ subscription', pro: 'Minds Pro subscription',
+      withdraw_refund: 'Withdrawal refund', plus: 'AED Connect Plus subscription', pro: 'AED Connect Pro subscription',
       supermind: 'Supermind', supermind_refund: 'Supermind refund', joined: 'Signup bonus',
       purchase: 'Token purchase', bonus: 'Bonus',
     };

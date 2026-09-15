@@ -40,7 +40,7 @@ vi.mock('../../components/Container', () => ({
 
 import MindsAIScreen from '../../app/ai';
 
-describe('Minds AI controls', () => {
+describe('AED Assistant controls', () => {
   beforeEach(() => {
     mocks.askAgent.mockResolvedValue('opened');
     mocks.resolvePersonalAgent.mockResolvedValue({
@@ -57,8 +57,8 @@ describe('Minds AI controls', () => {
     const model = await screen.findByRole('button', {
       name: 'Choose AI model, Claude Sonnet 4.6',
     });
-    const send = screen.getByRole('button', { name: 'Send prompt to Minds AI' });
-    const build = screen.getByRole('button', { name: 'Build with Minds AI' });
+    const send = screen.getByRole('button', { name: 'Send prompt to AED Assistant' });
+    const build = screen.getByRole('button', { name: 'Build with AED Assistant' });
     expect(model).toHaveAttribute('aria-expanded', 'false');
     expect(send).toBeDisabled();
     expect(build).toBeInTheDocument();
@@ -81,7 +81,7 @@ describe('Minds AI controls', () => {
     expect(screen.getByRole('button', { name: 'Choose AI model, GPT-5.5' }))
       .toHaveAttribute('aria-expanded', 'false');
 
-    await userEvent.type(screen.getByRole('textbox', { name: 'Ask Minds AI' }), 'Summarize my feed');
+    await userEvent.type(screen.getByRole('textbox', { name: 'Ask AED Assistant' }), 'Summarize my feed');
     expect(send).toBeEnabled();
     await userEvent.click(send);
     await waitFor(() => expect(mocks.askAgent).toHaveBeenCalledWith(
@@ -95,15 +95,15 @@ describe('Minds AI controls', () => {
     mocks.askAgent.mockResolvedValueOnce('failed');
     render(<MindsAIScreen />);
 
-    const prompt = screen.getByRole('textbox', { name: 'Ask Minds AI' });
+    const prompt = screen.getByRole('textbox', { name: 'Ask AED Assistant' });
     await userEvent.type(prompt, 'Help me understand this');
-    await userEvent.click(screen.getByRole('button', { name: 'Send prompt to Minds AI' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Send prompt to AED Assistant' }));
 
     await waitFor(() => expect(mocks.toast).toHaveBeenCalledWith(
-      'Could not start Minds AI. Try again.',
+      'Could not start AED Assistant. Try again.',
       'error',
     ));
     expect(prompt).toHaveValue('Help me understand this');
-    expect(screen.getByRole('button', { name: 'Send prompt to Minds AI' })).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'Send prompt to AED Assistant' })).toBeEnabled();
   });
 });

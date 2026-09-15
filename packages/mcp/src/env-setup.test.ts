@@ -28,7 +28,7 @@ afterAll(() => {
 });
 
 describe("env-setup", () => {
-  it("mirrors Minds scopes over inherited Recursiv values as an import side effect", async () => {
+  it("mirrors AED Connect scopes over inherited Recursiv values as an import side effect", async () => {
     // Simulate a hosted process: parent RECURSIV_* values already present,
     // Minds-specific values explicitly configured. The module body must make
     // the Minds scopes win the moment it is imported — before @recursiv/mcp's

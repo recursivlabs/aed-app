@@ -122,7 +122,7 @@ describe('signed-out Discover', () => {
 
   it.each([
     ['Public groups', '/groups'],
-    ['Minds Live', '/live'],
+    ['AED Live', '/live'],
     ['Public moderation log', '/moderation'],
   ] as const)('exposes the public %s preview as a real web link', (label, href) => {
     render(<SignedOutDiscover returnTo="/discover" />);

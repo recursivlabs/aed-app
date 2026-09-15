@@ -35,7 +35,7 @@ const NAV_ITEMS: NavItem[] = [
   { name: 'index', label: 'Home', icon: 'home-outline', activeIcon: 'home' },
   { name: 'discover', label: 'Directory', icon: 'search-outline', activeIcon: 'search' },
   // Minds AI — the user's AI on Minds. Clean single-prompt page (/ai); links out
-  // to the paywalled build surface. ("Minds AI" is a placeholder brand for now.)
+  // to the paywalled build surface. ("AED Assistant" is a placeholder brand for now.)
   // Sits third, above Chat: it is a headline surface, not a utility.
   { name: 'chat', label: 'Messages', icon: 'chatbubble-outline', activeIcon: 'chatbubble' },
   { name: 'notifications', label: 'Notifications', icon: 'notifications-outline', activeIcon: 'notifications' },
@@ -291,7 +291,7 @@ export function SideNav({ collapsed, onToggle }: SideNavProps) {
               onPress={() => router.push('/(tabs)')}
               hitSlop={8}
               accessibilityRole="link"
-              accessibilityLabel="Minds home"
+              accessibilityLabel="AED Connect home"
             >
               {collapsed ? (
                 // Bulb mark only (matches the favicon). The source is a square
@@ -301,7 +301,7 @@ export function SideNav({ collapsed, onToggle }: SideNavProps) {
                   source={isDark ? BULB_DARK : BULB}
                   style={{ width: 40, height: 40 }}
                   contentFit="contain"
-                  accessibilityLabel="Minds"
+                  accessibilityLabel="AED Connect"
                 />
               ) : (
                 // Expanded: full Minds wordmark logo, matched to the theme.
@@ -310,7 +310,7 @@ export function SideNav({ collapsed, onToggle }: SideNavProps) {
                   source={isDark ? LOGO_DARK : LOGO_LIGHT}
                   style={{ width: 91, height: 35 }}
                   contentFit="contain"
-                  accessibilityLabel="Minds"
+                  accessibilityLabel="AED Connect"
                 />
               )}
             </Pressable>

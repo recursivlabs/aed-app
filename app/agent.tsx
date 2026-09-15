@@ -71,7 +71,7 @@ export default function AgentSetupScreen() {
   const CURATOR_STATUS_LINES = React.useMemo(
     () => [
       'Searching the open web…',
-      'Reading top stories on Minds…',
+      'Reading top stories on AED Connect…',
       'Picking the most interesting threads…',
       'Filtering noise from signal…',
       'Reading what people are sharing…',

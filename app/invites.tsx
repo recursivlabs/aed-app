@@ -81,7 +81,7 @@ export default function InvitesScreen() {
         setTimeout(() => setCopied(null), 2000);
       } else {
         await Share.share({
-          title: 'Join me on Minds',
+          title: 'Join me on AED Connect',
           message: `Join me on Minds: ${link}`,
           url: link,
         });

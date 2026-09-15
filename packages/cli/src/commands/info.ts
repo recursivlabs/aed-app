@@ -5,7 +5,7 @@ export async function infoCommand(): Promise<void> {
   const apiKey = loadApiKey();
   const baseUrl = loadBaseUrl() ?? 'https://api.minds.com/api/v1';
 
-  log.info('Minds CLI status');
+  log.info('AED Connect CLI status');
   log.dim(`  api url:  ${baseUrl}`);
   log.dim(`  signed in: ${apiKey ? 'yes' : 'no'}`);
   if (apiKey) {

@@ -17,7 +17,7 @@ describe("applyMindsOrganizationEnvironment", () => {
     expect(env.RECURSIV_ORG_ID).toBe("minds-org");
   });
 
-  it("prefers the canonical Minds name when both Minds aliases are present", () => {
+  it("prefers the canonical AED Connect name when both AED Connect aliases are present", () => {
     const env = {
       MINDS_ORGANIZATION_ID: "canonical-minds-org",
       MINDS_ORG_ID: "legacy-minds-org",
@@ -30,7 +30,7 @@ describe("applyMindsOrganizationEnvironment", () => {
     expect(env.RECURSIV_ORG_ID).toBe("canonical-minds-org");
   });
 
-  it("preserves Recursiv defaults when no Minds organization is configured", () => {
+  it("preserves Recursiv defaults when no AED Connect organization is configured", () => {
     const env = {
       RECURSIV_ORGANIZATION_ID: "parent-org",
       RECURSIV_ORG_ID: "legacy-parent-org",
@@ -53,7 +53,7 @@ describe("applyMindsProjectEnvironment", () => {
     expect(env.RECURSIV_PROJECT_ID).toBe("minds-project");
   });
 
-  it("preserves the Recursiv default when no Minds project is configured", () => {
+  it("preserves the Recursiv default when no AED Connect project is configured", () => {
     const env = {
       RECURSIV_PROJECT_ID: "parent-project",
     };
@@ -62,7 +62,7 @@ describe("applyMindsProjectEnvironment", () => {
     expect(env.RECURSIV_PROJECT_ID).toBe("parent-project");
   });
 
-  it("treats a whitespace-only Minds project id as unset", () => {
+  it("treats a whitespace-only AED Connect project id as unset", () => {
     const env = {
       MINDS_PROJECT_ID: "   ",
       RECURSIV_PROJECT_ID: "parent-project",

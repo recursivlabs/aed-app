@@ -130,7 +130,7 @@ class WebAudioEngine implements AudioEngine {
     try {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: track.title || 'Audio',
-        artist: track.artist || 'Minds',
+        artist: track.artist || 'AED Connect',
         artwork: track.artwork
           ? [
               { src: track.artwork, sizes: '512x512', type: 'image/jpeg' },

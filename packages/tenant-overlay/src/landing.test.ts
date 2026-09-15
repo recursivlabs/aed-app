@@ -3,30 +3,30 @@ import { describe, expect, it } from 'vitest';
 import { renderLanding } from './landing';
 import { defaults } from './defaults';
 
-describe('Minds tenant landing page', () => {
-  it('exports the Minds tenant defaults without a runtime JSON loader', () => {
+describe('AED Connect tenant landing page', () => {
+  it('exports the AED Connect tenant defaults without a runtime JSON loader', () => {
     expect(defaults.authMethods).toBe('email');
     expect(defaults.features.aiAgents).toBe(true);
   });
 
-  it('renders Minds branding and escapes tenant-controlled text', () => {
+  it('renders AED Connect branding and escapes tenant-controlled text', () => {
     const html = renderLanding({
-      name: '<Minds & friends>',
+      name: '<AED Connect & friends>',
       slug: 'minds',
       fqdn: 'build.minds.com',
     });
 
-    expect(html).toContain('&lt;Minds &amp; friends&gt;');
+    expect(html).toContain('&lt;AED Connect &amp; friends&gt;');
     expect(html).toContain('The open AI');
     expect(html).toContain('Agents that work for you');
     expect(html).not.toContain('open-source');
     expect(html).not.toContain('token rewards');
-    expect(html).not.toContain('<Minds & friends>');
+    expect(html).not.toContain('<AED Connect & friends>');
   });
 
   it('rejects unsafe logo URL schemes', () => {
     const html = renderLanding({
-      name: 'Minds',
+      name: 'AED Connect',
       slug: 'minds',
       logo: 'javascript:alert(1)',
     });

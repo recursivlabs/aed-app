@@ -26,7 +26,7 @@ describe('public moderation page semantics', () => {
   it('uses one primary heading, a nested intro heading, and a route-specific title', async () => {
     render(<ModerationScreen />);
 
-    expect(document.title).toBe('Moderation & appeals — Minds');
+    expect(document.title).toBe('Moderation & appeals — AED Connect');
     expect(screen.getAllByRole('heading', { level: 1 })).toHaveLength(1);
     expect(screen.getByRole('heading', { level: 1, name: 'Moderation & appeals' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'How moderation works' })).toBeInTheDocument();

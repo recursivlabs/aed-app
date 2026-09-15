@@ -6,7 +6,7 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe('Minds account migration surface', () => {
+describe('AED Connect account migration surface', () => {
   it('exposes the Recursiv accounts resource without an escape-hatch hop', () => {
     const minds = new Minds({
       apiKey: 'sk_live_test',
@@ -19,7 +19,7 @@ describe('Minds account migration surface', () => {
   });
 });
 
-describe('Minds moderation transparency surface', () => {
+describe('AED Connect moderation transparency surface', () => {
   it('exposes the Recursiv moderation resource without an escape-hatch hop', () => {
     const minds = new Minds({
       apiKey: 'sk_live_test',
@@ -33,7 +33,7 @@ describe('Minds moderation transparency surface', () => {
   });
 });
 
-describe('Minds consumer subscription surface', () => {
+describe('AED Connect consumer subscription surface', () => {
   it('exposes the project-scoped Recursiv app-subscription resource directly', () => {
     const minds = new Minds({
       apiKey: 'sk_live_test',
@@ -47,7 +47,7 @@ describe('Minds consumer subscription surface', () => {
   });
 });
 
-describe('Minds launch metrics surface', () => {
+describe('AED Connect launch metrics surface', () => {
   it('exposes the launch dashboard fast path through the runtime wrapper', () => {
     const minds = new Minds({
       apiKey: 'sk_live_test',
@@ -59,7 +59,7 @@ describe('Minds launch metrics surface', () => {
   });
 });
 
-describe('Minds public post surface', () => {
+describe('AED Connect public post surface', () => {
   const projectId = '019d5190-f0c0-717e-a1bd-ef9c335292b9';
 
   it('reads the visibility-filtered public tRPC projection without an API key', async () => {
@@ -282,7 +282,7 @@ describe('Minds public post surface', () => {
   });
 });
 
-describe('Minds public community surface', () => {
+describe('AED Connect public community surface', () => {
   it('preserves the HTTP status when a public community request fails', async () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: false,
@@ -421,7 +421,7 @@ describe('Minds public community surface', () => {
   });
 });
 
-describe('Minds public profile surface', () => {
+describe('AED Connect public profile surface', () => {
   it('reads a profile and relationships through privacy-filtered public procedures', async () => {
     const fetchMock = vi.fn()
       .mockResolvedValueOnce({
@@ -491,7 +491,7 @@ describe('parity with the platform client', () => {
     }
   });
 
-  it('keeps the Minds-only surface that the platform client does not have', () => {
+  it('keeps the AED Connect-only surface that the platform client does not have', () => {
     const minds = new Minds({ apiKey: 'test-key' });
     const recursiv = new Recursiv({ apiKey: 'test-key', baseUrl: 'https://example.com' });
 

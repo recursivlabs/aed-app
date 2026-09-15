@@ -471,7 +471,7 @@ describe('profile action authentication handoff', () => {
 
     await user.click(screen.getByRole('button', { name: 'Share profile' }));
     expect(shareMock).toHaveBeenCalledWith({
-      title: 'Public Author on Minds',
+      title: 'Public Author on AED Connect',
       url: `${SITE_URL}/public-author`,
     });
     expect(router.push).not.toHaveBeenCalled();

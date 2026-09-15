@@ -1149,19 +1149,6 @@ export default function LandingScreen() {
             Use password instead
           </Text>
         </Pressable>
-
-        <Pressable
-          {...(Platform.OS === 'web'
-            ? { href: '/discover' }
-            : { onPress: () => router.push('/discover') }) as any}
-          accessibilityRole="link"
-          accessibilityLabel="Explore AED Connect without signing in"
-          style={({ pressed }) => ({ alignItems: 'center' as const, marginTop: spacing.sm, opacity: pressed ? 0.65 : 1, ...(Platform.OS === 'web' ? { cursor: 'pointer' } as any : {}) })}
-        >
-          <Text variant="caption" color={c.subtleText} align="center" style={{ opacity: 0.7 }}>
-            Want to look around first? <Text variant="caption" color={c.wordmark}>Explore AED Connect</Text>
-          </Text>
-        </Pressable>
       </View>
     );
   };

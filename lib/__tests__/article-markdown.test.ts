@@ -96,9 +96,9 @@ describe('renderMarkdownToHtml bare mode', () => {
 describe('restoreLostParagraphs', () => {
   it('puts a paragraph break at every seam the legacy import flattened', async () => {
     const { restoreLostParagraphs } = await import('../markdown');
-    const flat = 'Minds+ friends,First off, thank you for reading this. Your support makes all the difference.One of our goals is alignment. So it only makes sense to build a system where success is shared, not taken.We are doing our best.';
+    const flat = 'AED Connect Plus friends,First off, thank you for reading this. Your support makes all the difference.One of our goals is alignment. So it only makes sense to build a system where success is shared, not taken.We are doing our best.';
     expect(restoreLostParagraphs(flat)).toBe(
-      'Minds+ friends,\n\nFirst off, thank you for reading this. Your support makes all the difference.\n\nOne of our goals is alignment. So it only makes sense to build a system where success is shared, not taken.\n\nWe are doing our best.',
+      'AED Connect Plus friends,\n\nFirst off, thank you for reading this. Your support makes all the difference.\n\nOne of our goals is alignment. So it only makes sense to build a system where success is shared, not taken.\n\nWe are doing our best.',
     );
   });
 

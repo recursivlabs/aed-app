@@ -49,11 +49,11 @@ describe('chat recipient normalization', () => {
       type: 'one_on_one',
       members: [
         { id: 'me', is_ai: false, name: 'Me' },
-        { id: 'agent-1', is_ai: true, name: 'Minds AI' },
+        { id: 'agent-1', is_ai: true, name: 'AED Assistant' },
       ],
     }, 'me');
 
-    expect(recipient).toMatchObject({ id: 'agent-1', name: 'Minds AI', isAgent: true });
+    expect(recipient).toMatchObject({ id: 'agent-1', name: 'AED Assistant', isAgent: true });
     if (!recipient) throw new Error('expected an agent recipient');
     expect(conversationRecipientRoute(recipient)).toBe('agent');
   });

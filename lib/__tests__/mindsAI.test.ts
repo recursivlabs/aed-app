@@ -15,13 +15,13 @@ function makeSdk(created: boolean) {
 describe('bootstrapMindsAI', () => {
   beforeEach(() => ensureIntroDM.mockClear());
 
-  it('brands a NEWLY created agent as Minds AI on Gemini, then greets', async () => {
+  it('brands a NEWLY created agent as AED Assistant on Gemini, then greets', async () => {
     const { sdk, ensurePersonal } = makeSdk(true);
     await bootstrapMindsAI(sdk, { id: 'u1', name: 'Kit' });
     // first call: find-or-create with no overrides; second: brand it
     expect(ensurePersonal).toHaveBeenCalledTimes(2);
     const brand = ensurePersonal.mock.calls[1][0];
-    expect(brand.overrides.name).toBe('Minds AI');
+    expect(brand.overrides.name).toBe('AED Assistant');
     expect(brand.overrides.model).toBe('google/gemini-3.1-pro-preview');
     expect(brand.overrides.system_prompt).toMatch(/Minds AI/);
     expect(ensureIntroDM).toHaveBeenCalledWith(sdk, 'agent-9', 'Kit');

@@ -41,7 +41,7 @@ async function retireReplacedKey(
   } catch {
     log.warn(
       'Could not revoke the previously stored API key on the server — it may still be active. '
-        + 'You can revoke it from your Minds settings.',
+        + 'You can revoke it from your AED Connect settings.',
     );
   }
 }
@@ -63,7 +63,7 @@ async function discardMintedCredentials(
   } catch {
     log.warn(
       'Could not revoke the just-minted API key — it may remain active. '
-        + 'You can revoke it from your Minds settings.',
+        + 'You can revoke it from your AED Connect settings.',
     );
   }
   if (result.session?.token) {
@@ -84,7 +84,7 @@ async function loginWithApiKey(): Promise<void> {
   const { apiKey } = await prompts({
     type: 'password',
     name: 'apiKey',
-    message: 'Paste your Minds API key (starts with sk_live_ or sk_test_)',
+    message: 'Paste your AED Connect API key (starts with sk_live_ or sk_test_)',
   });
 
   if (!apiKey) {
@@ -147,7 +147,7 @@ export async function loginCommand(opts: LoginOptions = {}): Promise<void> {
     { email, otp },
     {
       name: `minds-cli-${Date.now()}`,
-      description: 'Minds CLI session',
+      description: 'AED Connect CLI session',
       scopes: [...MINDS_CLI_SCOPES],
       projectId: MINDS_PROJECT_ID,
     },
@@ -195,7 +195,7 @@ export async function logoutCommand(): Promise<void> {
     } catch {
       log.warn(
         'Could not revoke the stored API key on the server — it may still be active. '
-          + 'You can revoke it from your Minds settings.',
+          + 'You can revoke it from your AED Connect settings.',
       );
     }
   }

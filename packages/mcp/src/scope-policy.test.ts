@@ -9,7 +9,7 @@ import {
   resolveMindsGrantedScopes,
 } from "./scope-policy.js";
 
-describe("Minds MCP scope policy", () => {
+describe("AED Connect MCP scope policy", () => {
   it("defaults to read-only social/content scopes instead of all Recursiv tools", () => {
     const scopes = resolveMindsGrantedScopes({});
 
@@ -32,7 +32,7 @@ describe("Minds MCP scope policy", () => {
     expect(resolveMindsGrantedScopes({ MINDS_API_KEY_SCOPES: "*" })).toBeNull();
   });
 
-  it("prefers Minds scope env over Recursiv scope env", () => {
+  it("prefers AED Connect scope env over Recursiv scope env", () => {
     const scopes = resolveMindsGrantedScopes({
       MINDS_API_KEY_SCOPES: "posts:read,chat:read",
       RECURSIV_API_KEY_SCOPES: "admin",

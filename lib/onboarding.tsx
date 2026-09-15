@@ -28,7 +28,7 @@ export interface OnboardingState {
 }
 
 const DEFAULT_STATE: OnboardingState = {
-  agentName: 'Minds',
+  agentName: 'AED Connect',
   agentAvatar: 0,
   interests: [],
   freeTextInterests: '',

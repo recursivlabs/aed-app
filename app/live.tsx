@@ -168,7 +168,7 @@ export default function LiveScreen() {
               key={playerAttempt}
               uri={LIVE_STREAM_URL}
               autoplay
-              accessibilityLabel="Minds Live stream"
+              accessibilityLabel="AED Live stream"
               height={506}
               onPlaybackReady={playbackReady}
               onPlaybackError={playbackFailed}

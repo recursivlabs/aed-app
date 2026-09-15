@@ -395,7 +395,7 @@ export function FeedSidebar({ context = 'feed', feedPosts, relatedTo, group }: {
       </SidebarSection>
     ) : null,
     posts: (() => {
-      // "Today on Minds", not an all-time engagement leaderboard.
+      // "Today on AED Connect", not an all-time engagement leaderboard.
       //
       // The previous widget rendered title + author + "↑129 · 7 replies · 16
       // reminds" + a 44px thumb, ranked by all-time engagement. Three competing
@@ -411,7 +411,7 @@ export function FeedSidebar({ context = 'feed', feedPosts, relatedTo, group }: {
       if (stories.length === 0) return null;
       return (
         <SidebarSection
-          title="Today on Minds"
+          title="Today on AED Connect"
           icon="flame-outline"
           onSeeAll={() => router.push('/(tabs)/discover' as any)}
         >
@@ -687,7 +687,7 @@ export function FeedSidebar({ context = 'feed', feedPosts, relatedTo, group }: {
             <Text variant="body" color={colors.textSecondary} style={{ lineHeight: 20 }}>
               {currentTier === 'plus'
                 ? 'Go further with Pro: the biggest reach, full AI, voice mode and API access. You already have Plus — this is the next level.'
-                : 'Bigger reach, no ads, more AI, and priority everywhere. Back the free and open internet, and get more out of Minds.'}
+                : 'Bigger reach, no ads, more AI, and priority everywhere. Back the free and open internet, and get more out of AED Connect.'}
             </Text>
             <LinkPressable
               href="/upgrade"

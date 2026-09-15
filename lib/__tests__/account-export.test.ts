@@ -5,8 +5,8 @@ describe('account export downloads', () => {
   it('uses regular and encoded server filenames', () => {
     expect(accountExportFilename('attachment; filename="minds-export-2026-08-23.zip"'))
       .toBe('minds-export-2026-08-23.zip');
-    expect(accountExportFilename("attachment; filename*=UTF-8''Minds%20archive.zip"))
-      .toBe('Minds archive.zip');
+    expect(accountExportFilename("attachment; filename*=UTF-8''AED Connect%20archive.zip"))
+      .toBe('AED Connect archive.zip');
   });
 
   it('prevents Content-Disposition from creating a path', () => {

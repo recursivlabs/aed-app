@@ -69,7 +69,7 @@ describe('Live screen', () => {
     vi.unstubAllGlobals();
   });
 
-  it('keeps the live spectator experience inside Minds', async () => {
+  it('keeps the live spectator experience inside AED Connect', async () => {
     render(<LiveScreen />);
 
     await waitFor(() => expect(screen.getByText('LIVE NOW')).toBeInTheDocument());
@@ -77,7 +77,7 @@ describe('Live screen', () => {
       'data-uri',
       'https://streams.battlechat.live/cmaf/battle/index.m3u8',
     );
-    expect(screen.getByRole('button', { name: 'Minds Live stream' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'AED Live stream' })).toBeInTheDocument();
     expect(screen.getByText(/without leaving Minds/i)).toBeInTheDocument();
     expect(screen.getByText(/intended for adults/i)).toBeInTheDocument();
     expect(screen.queryByText(/Battlechat/i)).not.toBeInTheDocument();

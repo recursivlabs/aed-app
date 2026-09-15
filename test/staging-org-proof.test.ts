@@ -55,7 +55,7 @@ describe('P4.2 staging organization proof', () => {
     const output: string[] = [];
     const fetchImpl = vi.fn(async () => ({
       status: 200,
-      json: async () => ({ data: { id: env.STAGING_ORG_ID, name: 'Minds staging' } }),
+      json: async () => ({ data: { id: env.STAGING_ORG_ID, name: 'AED Connect staging' } }),
     }));
 
     await verifyStagingOrg({

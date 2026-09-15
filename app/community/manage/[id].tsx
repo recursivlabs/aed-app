@@ -361,7 +361,7 @@ export default function ManageCommunityScreen() {
             })}
           </View>
           <Text variant="caption" color={colors.textMuted}>
-            {community.privacy === 'public' ? 'Anyone on Minds can join and see the posts.' : 'People ask to join. Admins approve them, and only members see the posts.'}
+            {community.privacy === 'public' ? 'Anyone on AED Connect can join and see the posts.' : 'People ask to join. Admins approve them, and only members see the posts.'}
           </Text>
         </Section>
 

@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { writeMindsMcpStderr } from "../redacted-stderr.js";
 
-describe("Minds MCP redacted stderr logging", () => {
+describe("AED Connect MCP redacted stderr logging", () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });

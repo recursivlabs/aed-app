@@ -16,9 +16,9 @@ import { fetchDeduped } from './cache';
 // trailing 's, so the intro rendered "Hey jack's, I'm...". Generic
 // greeting dodges the whole class of name-parsing bugs.
 const INTRO_DM_BODY = [
-  "Hi, I'm Minds AI. I work only for you.",
+  "Hi, I'm AED Assistant. I work only for you.",
   '',
-  "I'm your own assistant here on Minds. I learn what you care about and bring you the best of it, help you keep up with your groups, draft replies in your voice, and answer questions about anything on the network or the open web.",
+  "I'm your own assistant here on AED Connect. I learn what you care about and bring you the best of it, help you keep up with your groups, draft replies in your voice, and answer questions about anything on the network or the open web.",
   '',
   'A few things worth knowing:',
   '- Just reply here anytime. Ask me something, or tell me a topic you follow and I will find the best of it for you.',

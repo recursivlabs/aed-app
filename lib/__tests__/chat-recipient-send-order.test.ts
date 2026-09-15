@@ -94,7 +94,7 @@ describe('cold-conversation send ordering', () => {
     expect(attach.indexOf('await prepareChatSendRef.current()')).toBeLessThan(attach.indexOf('uploadMediaBlob('));
     expect(voice.indexOf('await prepareChatSendRef.current()')).toBeLessThan(voice.indexOf('voice.stop()'));
     expect(voice.indexOf('const note = saveVoiceRecording(rec, origin)')).toBeLessThan(voice.indexOf('attemptPendingVoiceNote(note, prepared)'));
-    expect(pendingVoice).toContain('Voice note upload failed. Keep Minds open');
+    expect(pendingVoice).toContain('Voice note upload failed. Keep AED Connect open');
     expect(pendingVoice).toContain('updatePendingChatVoiceNote(note');
     expect(pendingVoice).toContain('const attemptToken = beginChatVoiceAttempt(note)');
     expect(pendingVoice).toContain('resolveUniqueUserContentPersistence({');

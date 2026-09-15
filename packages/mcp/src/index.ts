@@ -62,10 +62,10 @@ const baseUrl =
 const client = new Recursiv({ apiKey, baseUrl });
 
 const server = new McpServer({
-  name: "Minds — open AI social platform and developer surface, powered by Recursiv",
+  name: "AED Connect — open AI social platform and developer surface, powered by Recursiv",
   version: "0.0.1",
   description:
-    "Curated Minds social/content tool surface. Read-only by default; write tools and Recursiv platform/dev tools require explicit environment opt-in. Authenticated via MINDS_API_KEY.",
+    "Curated AED Connect social/content tool surface. Read-only by default; write tools and Recursiv platform/dev tools require explicit environment opt-in. Authenticated via MINDS_API_KEY.",
 });
 
 const grantedScopes = resolveMindsGrantedScopes();
@@ -116,8 +116,8 @@ server.registerResource(
   "server_manifest",
   "minds://server/manifest",
   {
-    title: "Minds MCP manifest",
-    description: "Machine-readable metadata about the Minds MCP server.",
+    title: "AED Connect MCP manifest",
+    description: "Machine-readable metadata about the AED Connect MCP server.",
     mimeType: "application/json",
   },
   async (uri) => ({

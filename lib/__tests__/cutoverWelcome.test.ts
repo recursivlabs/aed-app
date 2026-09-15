@@ -9,7 +9,7 @@ import {
 const LAUNCH_AT = '2026-08-31T04:00:00.000Z';
 const LAUNCH = Date.parse(LAUNCH_AT);
 
-describe('Minds 2.0 welcome eligibility', () => {
+describe('AED Connect welcome eligibility', () => {
   it('starts at the configured instant and expires globally after 30 days', () => {
     const returningUser = '2012-01-01T00:00:00.000Z';
     expect(isCutoverWelcomeActive(returningUser, LAUNCH_AT, LAUNCH - 1)).toBe(false);

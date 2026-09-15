@@ -52,7 +52,7 @@ describe('recent recipients in the post share sheet', () => {
 
     expect(screen.getAllByRole('button', { name: /^Send post to / }).map(
       (button) => button.getAttribute('aria-label'),
-    )).toEqual(['Send post to Minds AI']);
+    )).toEqual(['Send post to AED Assistant']);
     expect(mocks.dm).not.toHaveBeenCalled();
     expect(mocks.send).not.toHaveBeenCalled();
   });

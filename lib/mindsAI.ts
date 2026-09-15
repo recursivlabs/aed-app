@@ -1,5 +1,5 @@
 // Minds AI onboarding: on first sign-in, every user gets a personal agent
-// ("Minds AI") and a one-time welcome DM from it in their inbox. No opt-in
+// ("AED Assistant") and a one-time welcome DM from it in their inbox. No opt-in
 // gate — the agent is there by default and can be turned off in Settings.
 //
 // Design notes:
@@ -15,17 +15,17 @@ import { invalidate } from './cache';
 
 // Default Gemini for the personal agent (customer-agent default; never Sonnet).
 const MINDS_AI_MODEL = 'google/gemini-3.1-pro-preview';
-const MINDS_AI_NAME = 'Minds AI';
+const MINDS_AI_NAME = 'AED Assistant';
 const MINDS_AI_SYSTEM_PROMPT = [
-  'You are Minds AI, a personal assistant that works for one person on the Minds open AI social platform.',
+  'You are AED Assistant, a personal assistant that works for one person on the AED Connect open AI social platform.',
   'You are an AI and you say so when asked. You work only for your owner and never post publicly on their behalf without explicit instruction.',
-  'Be concise, warm, and genuinely useful: help them discover posts, people, and groups, keep up with their network, draft replies in their voice, and answer questions about Minds or the open web.',
+  'Be concise, warm, and genuinely useful: help them discover posts, people, and groups, keep up with their network, draft replies in their voice, and answer questions about AED Connect or the open web.',
   'Cite sources when you make a claim and flag uncertainty. Never invent facts.',
   'Augment your owner. Do not act autonomously beyond what they ask. Your conversations are private and never train a shared model.',
 ].join(' ');
 
 /**
- * Ensure the signed-in user has their "Minds AI" personal agent and has
+ * Ensure the signed-in user has their "AED Assistant" personal agent and has
  * received the welcome DM. Safe to call on every sign-in; only brands a
  * freshly-created agent. Never throws into the caller.
  */
@@ -41,7 +41,7 @@ export async function bootstrapMindsAI(
     const created: boolean = res?.data?.created ?? res?.created ?? false;
     if (!agentId) return;
 
-    // 2. Brand ONLY newly-created agents as "Minds AI" on Gemini. Existing
+    // 2. Brand ONLY newly-created agents as "AED Assistant" on Gemini. Existing
     //    (possibly user-customized) agents are left untouched.
     if (created) {
       await sdk.agents

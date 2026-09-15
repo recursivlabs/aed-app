@@ -120,14 +120,14 @@ describe('native video playback retry', () => {
   it('retains a caller label and reports a new error for each immediately failed attempt', () => {
     mocks.initialStatus = 'error';
     const onPlaybackError = vi.fn();
-    render(<VideoPlayer uri={uri} accessibilityLabel="Minds Live stream" onPlaybackError={onPlaybackError} />);
+    render(<VideoPlayer uri={uri} accessibilityLabel="AED Live stream" onPlaybackError={onPlaybackError} />);
     expect(onPlaybackError).toHaveBeenCalledOnce();
 
-    fireEvent.click(screen.getByRole('button', { name: 'Minds Live stream, retry video' }));
+    fireEvent.click(screen.getByRole('button', { name: 'AED Live stream, retry video' }));
 
     expect(mocks.players).toHaveLength(2);
     expect(onPlaybackError).toHaveBeenCalledTimes(2);
-    expect(screen.getByRole('button', { name: 'Minds Live stream, retry video' })).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'AED Live stream, retry video' })).toBeEnabled();
     setStatus(mocks.players[1], 'error');
     expect(onPlaybackError).toHaveBeenCalledTimes(2);
   });

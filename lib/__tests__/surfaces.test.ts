@@ -90,7 +90,7 @@ describe('article surface detection', () => {
     expect(readingTimeMinutes(articlePost)).toBeGreaterThanOrEqual(1);
   });
 
-  it('recovers a missing legacy article cover from its Minds GUID', () => {
+  it('recovers a missing legacy article cover from its AED Connect GUID', () => {
     expect(coverImageUrl({
       ...articlePost,
       media: [],
@@ -107,9 +107,9 @@ describe('article surface detection', () => {
   it('turns legacy HTML into a tag-free article excerpt', () => {
     const legacy = {
       ...articlePost,
-      content: '<h2>Legacy heading</h2><p>Hello <strong>Minds</strong> &amp; welcome.</p>',
+      content: '<h2>Legacy heading</h2><p>Hello <strong>AED Connect</strong> &amp; welcome.</p>',
     };
-    expect(articleExcerpt(legacy)).toBe('Legacy heading Hello Minds & welcome.');
+    expect(articleExcerpt(legacy)).toBe('Legacy heading Hello AED Connect & welcome.');
     expect(readingTimeMinutes(legacy)).toBe(1);
   });
 });

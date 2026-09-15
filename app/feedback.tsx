@@ -139,7 +139,7 @@ export default function FeedbackScreen() {
               </Text>
             </View>
             {choiceCard('bug-outline', 'Report a bug', 'Something broke or behaved wrong', 'bug')}
-            {choiceCard('bulb-outline', 'Propose a feature', 'An idea that would make Minds better', 'idea')}
+            {choiceCard('bulb-outline', 'Propose a feature', 'An idea that would make AED Connect better', 'idea')}
           </>
         ) : mode === 'bug' ? (
           <>

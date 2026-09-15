@@ -29,7 +29,7 @@ import { TotpQrCode } from '../../components/TotpQrCode';
 
 describe('TotpQrCode', () => {
   it('renders the complete setup URI as a scannable, accessible QR code and manual fallback', () => {
-    const uri = 'otpauth://totp/Minds%3Amember%40example.com?secret=ABC123&issuer=Minds';
+    const uri = 'otpauth://totp/AED Connect%3Amember%40example.com?secret=ABC123&issuer=AED Connect';
 
     render(<TotpQrCode uri={uri} />);
 

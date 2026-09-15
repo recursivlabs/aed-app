@@ -122,7 +122,7 @@ export function Header({ showBack, title }: Props) {
           <Pressable
             hitSlop={10}
             accessibilityRole="link"
-            accessibilityLabel="Minds home"
+            accessibilityLabel="AED Connect home"
             onPress={() => {
               const onHome = pathname === '/' || pathname === '' || pathname === '/index';
               if (onHome) emitHomeScrollToTop();
@@ -135,7 +135,7 @@ export function Header({ showBack, title }: Props) {
               // Legacy Minds lockup is 2.6:1 (bulb + lowercase wordmark), so 32 tall = 83 wide.
               style={{ width: 83, height: 32 }}
               contentFit="contain"
-              accessibilityLabel="Minds — go home"
+              accessibilityLabel="AED Connect — go home"
             />
           </Pressable>
         </View>

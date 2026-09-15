@@ -7,7 +7,7 @@ const legacyArticle = {
   id: 'legacy-article-1',
   title: 'A migrated article',
   content_format: 'markdown',
-  content: '<h2>Legacy heading</h2><p>Hello <strong>Minds</strong>.</p>',
+  content: '<h2>Legacy heading</h2><p>Hello <strong>AED Connect</strong>.</p>',
   media: [],
 };
 
@@ -16,7 +16,7 @@ describe('ArticleCard', () => {
     const { container } = render(<ArticleCard post={legacyArticle} full />);
 
     expect(screen.getByRole('heading', { name: 'Legacy heading' })).toBeInTheDocument();
-    expect(container.querySelector('strong')?.textContent).toBe('Minds');
+    expect(container.querySelector('strong')?.textContent).toBe('AED Connect');
     expect(container.textContent).not.toContain('<h2>');
   });
 
@@ -40,7 +40,7 @@ describe('ArticleCard', () => {
   it('uses readable text rather than tags in the compact excerpt', () => {
     const { container } = render(<ArticleCard post={legacyArticle} />);
 
-    expect(container.textContent).toContain('Legacy heading Hello Minds.');
+    expect(container.textContent).toContain('Legacy heading Hello AED Connect.');
     expect(container.textContent).not.toContain('<h2>');
   });
 

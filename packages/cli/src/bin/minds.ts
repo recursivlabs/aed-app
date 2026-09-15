@@ -37,11 +37,11 @@ const program = new Command();
 
 program
   .name('minds')
-  .description('CLI for the Minds platform')
+  .description('CLI for the AED Connect platform')
   .version(packageJson.version);
 
 // ─── Auth ────────────────────────────────────────────────────────────
-const auth = program.command('auth').description('Manage your Minds API authentication');
+const auth = program.command('auth').description('Manage your AED Connect API authentication');
 auth
   .command('login')
   .description('Sign in with a code sent to your email')
@@ -118,7 +118,7 @@ const moderation = program.command('moderation').description('Read moderation de
 moderation
   .command('log')
   .description('Read the privacy-safe public moderation log')
-  .option('--network-id <id>', 'Network UUID (defaults to the main Minds network)')
+  .option('--network-id <id>', 'Network UUID (defaults to the main AED Connect network)')
   .option('--limit <n>', 'Max results (default 50)')
   .option('--offset <n>', 'Pagination offset (default 0)')
   .option('--json', 'Output JSON')
@@ -138,18 +138,18 @@ moderation
 // ─── Cloud / tenant management (coming soon) ─────────────────────────
 program
   .command('init [name]')
-  .description('Scaffold a new Minds Cloud network (coming soon)')
+  .description('Scaffold a new AED Connect Cloud network (coming soon)')
   .action(wrap(initCommand));
 program
   .command('deploy')
-  .description('Deploy a Minds Cloud tenant (coming soon)')
+  .description('Deploy a AED Connect Cloud tenant (coming soon)')
   .action(wrap(deployCommand));
 program
   .command('tenant')
-  .description('Manage Minds Cloud tenants (coming soon)')
+  .description('Manage AED Connect Cloud tenants (coming soon)')
   .action(wrap(tenantCommand));
 // ─── Chat ────────────────────────────────────────────────────────────
-const chat = program.command('chat').description('Read and send Minds messages');
+const chat = program.command('chat').description('Read and send AED Connect messages');
 chat.action(() => chat.outputHelp());
 chat
   .command('list')

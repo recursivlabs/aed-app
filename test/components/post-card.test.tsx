@@ -481,7 +481,7 @@ describe('PostCard', () => {
         data: {
           url,
           domain: 'example.com',
-          title: 'Minds launches everywhere',
+          title: 'AED Connect launches everywhere',
           description: 'The launch story',
           image: 'https://example.com/preview.jpg',
           favicon: null,
@@ -493,7 +493,7 @@ describe('PostCard', () => {
 
     render(<PostCard post={makePost({ content: url })} />);
 
-    const preview = await screen.findByRole('link', { name: 'Open Minds launches everywhere' });
+    const preview = await screen.findByRole('link', { name: 'Open AED Connect launches everywhere' });
     await userEvent.click(preview);
     expect(open).toHaveBeenCalledWith(url, '_blank', 'noopener');
   });
@@ -522,7 +522,7 @@ describe('PostCard', () => {
     render(<PostCard post={makePost({
       content: 'My take on this',
       community_id: 'community-1',
-      community_name: 'Open Minds',
+      community_name: 'Open AED Connect',
       reposted_from: {
         id: 'quoted-1',
         content: 'The quoted words',
@@ -531,7 +531,7 @@ describe('PostCard', () => {
       },
     })} />);
 
-    expect(screen.getByRole('link', { name: 'View community Open Minds' }))
+    expect(screen.getByRole('link', { name: 'View community Open AED Connect' }))
       .toHaveAttribute('href', '/community/community-1');
     expect(screen.getByRole('link', { name: 'Open quoted post by Kyle Reese' }))
       .toHaveAttribute('href', '/post/quoted-1');

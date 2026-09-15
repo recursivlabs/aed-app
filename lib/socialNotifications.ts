@@ -1,5 +1,5 @@
 /**
- * ONE definition of "is this a Minds notification".
+ * ONE definition of "is this a AED Connect notification".
  *
  * WHY THIS EXISTS
  * This account is both a person on a social network and the operator of a

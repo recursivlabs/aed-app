@@ -44,7 +44,7 @@ export function groupAdmin(sdk: any) {
   const call = (method: string, args: unknown[], fallback: (client: Http) => Promise<any>) => {
     const publicMethod = communities[method];
     if (typeof publicMethod === 'function') return publicMethod.apply(communities, args);
-    if (!http?.get) throw new Error('Update the Minds SDK to manage this group');
+    if (!http?.get) throw new Error('Update the AED Connect SDK to manage this group');
     return fallback(http);
   };
   return {

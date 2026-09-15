@@ -18,7 +18,7 @@ vi.mock('../lib/output.js', () => ({
 describe('minds info', () => {
   beforeEach(() => vi.clearAllMocks());
 
-  it('reports the Minds API when no override is configured', async () => {
+  it('reports the AED Connect API when no override is configured', async () => {
     await infoCommand();
 
     expect(log.dim).toHaveBeenCalledWith('  api url:  https://api.minds.com/api/v1');

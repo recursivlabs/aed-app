@@ -166,7 +166,7 @@ function personContext(u: any) {
   const bio = String(u?.bio || u?.description || u?.briefdescription || '').trim();
   if (bio) return bio;
   const f = profileFollowerCount(u);
-  return f > 0 ? `${formatCount(f)} followers` : 'New to Minds';
+  return f > 0 ? `${formatCount(f)} followers` : 'New to AED Connect';
 }
 function groupContext(c: any) {
   const bio = communityDescription(c);
@@ -276,7 +276,7 @@ export function DiscoverResults({ q }: { q: string }) {
 }
 
 // ── Landing (no query) ──────────────────────────────────────────────────────
-// One "Today on Minds" story: kicker + headline (+ optional dek), then its real
+// One "Today on AED Connect" story: kicker + headline (+ optional dek), then its real
 // posts as tappable rows. The edition is AI-as-EDITOR — every post is a real
 // human post; the model only selected and grouped them.
 function TodayStory({ story, onOpenPost }: { story: any; onOpenPost: (p: any) => void }) {
@@ -327,7 +327,7 @@ export function DiscoverLanding() {
     <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ paddingBottom: 48 }}>
       {!!edition?.stories?.length && (
         <>
-          <SectionHeader title="Today on Minds" />
+          <SectionHeader title="Today on AED Connect" />
           {edition.stories.slice(0, 5).map((s: any, i: number) => (
             <TodayStory key={s.id || `story-${i}`} story={s} onOpenPost={openPost} />
           ))}
@@ -355,7 +355,7 @@ export function DiscoverLanding() {
 
       {topPosts.length > 0 && (
         <>
-          <SectionHeader title="Top on Minds today" onSeeAll={() => router.push('/(tabs)/discover/posts' as any)} />
+          <SectionHeader title="Top on AED Connect today" onSeeAll={() => router.push('/(tabs)/discover/posts' as any)} />
           {topPosts.map((p: any) => (
             <Row key={`t-${p.id}`} kind="post" item={p} thumb={postThumb(p).url} avatar={p.author?.image || p.author?.avatar} name={p.author?.name || p.author?.username || 'Post'} handle={p.author?.username ? `@${p.author.username}` : undefined} context={`${(p.content || '').replace(/\n/g, ' ').slice(0, 70) || 'media'} · ${formatCount(postScore(p) || 0)} reactions`} onOpen={openPost} />
           ))}

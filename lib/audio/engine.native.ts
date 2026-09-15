@@ -81,7 +81,7 @@ function createNativeEngine(mod: TrackPlayerModule): NativeEngine {
         id: track.id,
         url: local ?? track.url,
         title: track.title || 'Audio',
-        artist: track.artist || 'Minds',
+        artist: track.artist || 'AED Connect',
         artwork: track.artwork,
         duration: track.duration,
       });

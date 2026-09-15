@@ -38,7 +38,7 @@ vi.mock('../../lib/auth', () => ({
 vi.mock('../../lib/hooks', async (importOriginal) => ({
   ...await importOriginal<typeof import('../../lib/hooks')>(),
   useCommunities: () => ({
-    communities: [{ id: 'community-1', name: 'Minds Builders' }],
+    communities: [{ id: 'community-1', name: 'AED Connecters' }],
     loading: false,
   }),
 }));
@@ -173,14 +173,14 @@ describe('composer edits during publication', () => {
     fireEvent.click(screen.getByRole('button', { name: 'Add tags' }));
     fireEvent.change(screen.getByPlaceholderText('Add a tag...'), { target: { value: 'unfinished-tag' } });
     fireEvent.click(screen.getByRole('button', { name: 'Post audience: Global' }));
-    fireEvent.click(screen.getByRole('radio', { name: 'Minds Builders' }));
+    fireEvent.click(screen.getByRole('radio', { name: 'AED Connecters' }));
     fireEvent.click(screen.getByRole('switch', { name: 'Mark post as NSFW' }));
     expect(screen.getByText('#new-tag')).toBeInTheDocument();
 
     await act(async () => { request.resolve(acceptedPost); });
     expect(screen.getByText('#new-tag')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Add a tag...')).toHaveValue('unfinished-tag');
-    expect(screen.getByRole('button', { name: 'Post audience: Minds Builders' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Post audience: AED Connecters' })).toBeInTheDocument();
     expect(screen.getByRole('switch', { name: 'Mark post as NSFW' })).toHaveAttribute('aria-checked', 'true');
     expect(input()).toHaveValue(submittedContent);
     expect(router.replace).not.toHaveBeenCalled();

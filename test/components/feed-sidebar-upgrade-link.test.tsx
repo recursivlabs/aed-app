@@ -93,8 +93,8 @@ describe('FeedSidebar navigation', () => {
   it('names right-rail destinations and follow actions by purpose', () => {
     render(<FeedSidebar />);
 
-    expect(screen.getByRole('link', { name: 'Today on Minds' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'See all Today on Minds' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Today on AED Connect' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'See all Today on AED Connect' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Open story: Accessible discovery' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Trending Channels' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'See all Trending Channels' })).toBeInTheDocument();

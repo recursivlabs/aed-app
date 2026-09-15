@@ -5,7 +5,7 @@
  * Replaces the bare `serve dist -s` we shipped before. That rewrote every path
  * to one identical index.html, so every shared minds.com link — a post, a
  * profile, a community — unfurled on X/Slack/iMessage/Signal as a bare
- * "Minds" with no description and no image (web.output "single" discards
+ * "AED Connect" with no description and no image (web.output "single" discards
  * app/+html.tsx entirely; see scripts/inject-boot-shell.mjs).
  *
  * This server keeps the SPA behavior (all non-file paths serve index.html)
@@ -35,7 +35,7 @@ import { resolveServedCommit } from './write-build-info.mjs';
 
 const PORT = Number(process.env.PORT || 3000);
 const DIST = process.env.EXPO_WEB_DIST || 'dist';
-// minds.com serves LEGACY Minds until the cutover — default to the domain the
+// minds.com serves LEGACY AED Connect until the cutover — default to the domain the
 // new app answers on. At cutover set EXPO_PUBLIC_SITE_URL=https://www.minds.com.
 const SITE_ORIGIN = (process.env.EXPO_PUBLIC_SITE_URL || 'https://minds.on.minds.io').replace(/\/+$/, '');
 const API_BASE = (
@@ -74,12 +74,12 @@ const ANDROID_STORE_URL = 'https://play.google.com/store/apps/details?id=com.min
 const LEGACY_API_PATH_RE = /^\/api\/v[1-9]\d*(?:\/|$)/;
 const STATIC_PUBLIC_META = {
   live: {
-    title: 'Minds Live — Watch live battles',
-    description: 'Watch live two-minute webcam battles without leaving Minds.',
+    title: 'AED Connect Live — Watch live battles',
+    description: 'Watch live two-minute webcam battles without leaving AED Connect.',
   },
   privacy: {
-    title: 'Minds 2.0 Privacy — What we collect and why',
-    description: 'Learn what Minds collects, why, and what you can do about it.',
+    title: 'AED Connect 2.0 Privacy — What we collect and why',
+    description: 'Learn what AED Connect collects, why, and what you can do about it.',
   },
 };
 
@@ -98,7 +98,7 @@ export function legacyApiUpgradeResponseForPath(pathname) {
       status: 'error',
       code: 'client_upgrade_required',
       errorId: 'client_upgrade_required',
-      message: 'This version of Minds is no longer supported. Update Minds to continue.',
+      message: 'This version of AED Connect is no longer supported. Update Minds to continue.',
       links: {
         web: `${SITE_ORIGIN}/`,
         ios: IOS_STORE_URL,
@@ -164,7 +164,7 @@ const POST_PATH_RE = /^\/post\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[
 const COMMUNITY_PATH_RE = /^\/community\/[a-zA-Z0-9][a-zA-Z0-9_-]{0,127}$/;
 
 /**
- * Extract the post GUID from historical Minds permalink shapes whose mapping
+ * Extract the post GUID from historical AED Connect permalink shapes whose mapping
  * is known. Group-profile URLs are intentionally excluded: their first GUID
  * identifies a community, not a post.
  */
@@ -184,7 +184,7 @@ export function legacyPostGuidForPath(pathname) {
   return guid && LEGACY_GUID_RE.test(guid) ? guid : null;
 }
 
-/** Extract the community GUID from historical Minds group-profile URLs. */
+/** Extract the community GUID from historical AED Connect group-profile URLs. */
 export function legacyCommunityGuidForPath(pathname) {
   const segs = pathname.split('/').filter(Boolean).map((segment) => {
     try { return decodeURIComponent(segment); } catch { return segment; }
@@ -541,7 +541,7 @@ export async function metaForPath(pathname, searchParams, getPublic = publicApiG
   if (segs.length === 0 || segs[0] === 'signup' || segs[0] === 'signin') {
     if (searchParams.get('ref')) {
       return {
-        title: 'Join me on Minds',
+        title: 'Join me on AED Connect',
         description: DEFAULT_DESCRIPTION,
         url: pageUrl,
         image: INVITE_IMAGE,
@@ -564,13 +564,13 @@ export async function metaForPath(pathname, searchParams, getPublic = publicApiG
     // Never leak NSFW content into unfurl cards — the app gates it behind a
     // click-through, so the preview must too.
     if (post.is_nsfw || post.isNsfw) {
-      return { title: 'Post on Minds', description: DEFAULT_DESCRIPTION, url: pageUrl, type: 'article' };
+      return { title: 'Post on AED Connect', description: DEFAULT_DESCRIPTION, url: pageUrl, type: 'article' };
     }
     const author = post.author || post.user || {};
     const authorName = author.name || author.username || 'Someone';
     const title = (typeof post.title === 'string' && post.title.trim())
       ? post.title.trim()
-      : `${authorName} on Minds`;
+      : `${authorName} on AED Connect`;
     const image = postImage(post);
     const avatar = author.image || author.avatar || null;
     return {
@@ -596,7 +596,7 @@ export async function metaForPath(pathname, searchParams, getPublic = publicApiG
     // Non-public communities keep the generic card.
     if (c.privacy && c.privacy !== 'public') return { url: pageUrl };
     return {
-      title: c.name ? `${c.name} — Minds` : undefined,
+      title: c.name ? `${c.name} — AED Connect` : undefined,
       description: excerpt(c.description) || (c.name ? `Join the ${c.name} community on Minds.` : undefined),
       url: pageUrl,
       image: c.banner || c.banner_url || c.image || c.avatar || undefined,
@@ -615,7 +615,7 @@ export async function metaForPath(pathname, searchParams, getPublic = publicApiG
     if (!u) return { url: pageUrl };
     const name = u.name || u.username || username;
     return {
-      title: `${name} (@${u.username || username}) — Minds`,
+      title: `${name} (@${u.username || username}) — AED Connect`,
       description: excerpt(u.bio) || `${name} is on Minds. Follow them to see their posts.`,
       url: pageUrl,
       image: u.banner || u.banner_url || u.image || u.avatar || undefined,
@@ -792,7 +792,7 @@ function sendLegacyApiUpgrade(req, res, response) {
     'Content-Type': 'application/json; charset=utf-8',
     'Cache-Control': 'no-store',
     'Content-Length': body.length,
-    Upgrade: 'Minds/2.0',
+    Upgrade: 'AED Connect/2.0',
   });
   res.end(req.method === 'HEAD' ? undefined : body);
 }
@@ -813,11 +813,11 @@ function legacyStatusPage(status) {
   const unavailable = status === 503;
   const title = unavailable ? 'Post temporarily unavailable' : 'This post is no longer available';
   const description = unavailable
-    ? 'Minds could not resolve this historical link right now. Please try again shortly.'
-    : 'This historical Minds post could not be carried to the new network.';
+    ? 'AED Connect could not resolve this historical link right now. Please try again shortly.'
+    : 'This historical AED Connect post could not be carried to the new network.';
   return `<!doctype html><html lang="en"><head><meta charset="utf-8" />` +
     `<meta name="viewport" content="width=device-width, initial-scale=1" />` +
-    `<meta name="robots" content="noindex" /><title>${esc(title)} — Minds</title></head>` +
+    `<meta name="robots" content="noindex" /><title>${esc(title)} — AED Connect</title></head>` +
     `<body><main><h1>${esc(title)}</h1><p>${esc(description)}</p>` +
     `<p><a href="${esc(`${SITE_ORIGIN}/discover`)}">Discover Minds</a></p></main></body></html>`;
 }
