@@ -40,6 +40,8 @@ const NAV_ITEMS: NavItem[] = [
   { name: 'chat', label: 'Messages', icon: 'chatbubble-outline', activeIcon: 'chatbubble' },
   { name: 'notifications', label: 'Notifications', icon: 'notifications-outline', activeIcon: 'notifications' },
   { name: 'groups', label: 'Committees', icon: 'people-outline', activeIcon: 'people' },
+  { name: 'events', label: 'Events', icon: 'calendar-outline', activeIcon: 'calendar' },
+  { name: 'insights', label: 'Insights', icon: 'bar-chart-outline', activeIcon: 'bar-chart' },
   { name: 'bookmarks', label: 'Saved', icon: 'bookmark-outline', activeIcon: 'bookmark' },
 ];
 
