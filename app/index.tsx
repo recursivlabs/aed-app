@@ -229,7 +229,7 @@ function AuthPolicyLinks() {
   );
   return (
     <View
-      accessibilityLabel="Minds policies"
+      accessibilityLabel="AED policies"
       style={{ flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 4, marginTop: spacing.xl, maxWidth: 360 }}
     >
       <Text variant="caption" color={colors.textMuted}>By signing in you agree to the</Text>
@@ -387,7 +387,7 @@ export default function LandingScreen() {
   if (isLoading) {
     return (
       <View style={{ flex: 1, backgroundColor: '#08080a', alignItems: 'center', justifyContent: 'center' }}>
-        <Image source={SPLASH_MARK} style={{ width: 200, height: 200 }} contentFit="contain" accessibilityLabel="Minds" />
+        <Image source={SPLASH_MARK} style={{ width: 200, height: 200 }} contentFit="contain" accessibilityLabel="AED Connect" />
       </View>
     );
   }
@@ -1155,11 +1155,11 @@ export default function LandingScreen() {
             ? { href: '/discover' }
             : { onPress: () => router.push('/discover') }) as any}
           accessibilityRole="link"
-          accessibilityLabel="Explore Minds without signing in"
+          accessibilityLabel="Explore AED Connect without signing in"
           style={({ pressed }) => ({ alignItems: 'center' as const, marginTop: spacing.sm, opacity: pressed ? 0.65 : 1, ...(Platform.OS === 'web' ? { cursor: 'pointer' } as any : {}) })}
         >
           <Text variant="caption" color={c.subtleText} align="center" style={{ opacity: 0.7 }}>
-            Want to look around first? <Text variant="caption" color={c.wordmark}>Explore Minds</Text>
+            Want to look around first? <Text variant="caption" color={c.wordmark}>Explore AED Connect</Text>
           </Text>
         </Pressable>
       </View>
@@ -1225,7 +1225,7 @@ export default function LandingScreen() {
               marginBottom: isMobile ? spacing.lg : spacing['3xl'],
             }}
             contentFit="contain"
-            accessibilityLabel="Minds"
+            accessibilityLabel="AED Connect"
             onLoad={revealHero}
             onError={revealHero}
           />
@@ -1238,14 +1238,14 @@ export default function LandingScreen() {
             aria-level={1}
             style={{
               fontSize: 18,
-              letterSpacing: 8,
+              letterSpacing: 3,
               fontWeight: '200',
               textTransform: 'lowercase',
               opacity: c.taglineOpacity,
               marginTop: spacing.md,
             }}
           >
-            think freely
+            igniting the equipment industry
           </Text>
 
         </View>

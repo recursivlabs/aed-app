@@ -64,7 +64,7 @@ const ANDROID_CERT_FINGERPRINTS = configuredAndroidFingerprints.length
   : [DEFAULT_ANDROID_CERT_FINGERPRINT];
 
 const SITE_NAME = 'AED Connect';
-const DEFAULT_TITLE = 'Minds — The open AI social platform';
+const DEFAULT_TITLE = 'AED Connect — Associated Equipment Distributors';
 // Em dashes are allowed in the TITLE only, never in descriptions (brand rule).
 const DEFAULT_DESCRIPTION = 'Choose your feed, build AI agents, and own your audience on an open social platform.';
 const DEFAULT_IMAGE = `${SITE_ORIGIN}/og-default.png`;

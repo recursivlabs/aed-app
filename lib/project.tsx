@@ -8,15 +8,15 @@ interface ProjectContextValue {
 }
 
 const ProjectContext = React.createContext<ProjectContextValue>({
-  name: 'Minds',
-  description: 'The open AI social platform',
+  name: 'AED Connect',
+  description: 'The member platform for equipment distribution',
   accentColor: colors.accent,
 });
 
 export function ProjectProvider({ children }: { children: React.ReactNode }) {
   const value = React.useMemo(() => ({
-    name: 'Minds',
-    description: 'The open AI social platform',
+    name: 'AED Connect',
+    description: 'The member platform for equipment distribution',
     accentColor: colors.accent,
   }), []);
 

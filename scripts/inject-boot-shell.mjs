@@ -51,7 +51,7 @@ let html = readFileSync(file, 'utf8');
 // minds.com serves LEGACY Minds until the cutover — default to the domain the
 // new app answers on. At cutover set EXPO_PUBLIC_SITE_URL=https://www.minds.com.
 const SITE_ORIGIN = (process.env.EXPO_PUBLIC_SITE_URL || 'https://minds.on.minds.io').replace(/\/+$/, '');
-const META_TITLE = 'Minds — The open AI social platform';
+const META_TITLE = 'AED Connect — Associated Equipment Distributors';
 // Em dashes are allowed in the TITLE only, never in descriptions (brand rule).
 const META_DESCRIPTION = 'Choose your feed, build AI agents, and own your audience on an open social platform.';
 const META_BLOCK = `<!--minds-meta-->

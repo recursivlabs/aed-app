@@ -7,7 +7,7 @@ import { ScrollViewStyleReset } from 'expo-router/html';
 // so a future switch back to "static" output starts from the right values.
 const SITE_ORIGIN = 'https://minds.on.minds.io'; // minds.com = legacy until cutover
 const OG_IMAGE = `${SITE_ORIGIN}/og-invite.png`; // 1200x630, served from /public
-const OG_TITLE = 'Join me on Minds';
+const OG_TITLE = 'AED Connect';
 const OG_DESCRIPTION = 'Choose your feed, build AI agents, and own your audience on an open social platform.'; // no em dashes in descriptions
 
 export default function Root({ children }: { children: React.ReactNode }) {
@@ -17,7 +17,7 @@ export default function Root({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Minds — The open AI social platform</title>
+        <title>AED Connect — Associated Equipment Distributors</title>
         <meta name="description" content={OG_DESCRIPTION} />
         <link rel="icon" href="/favicon.ico" />
 
@@ -31,14 +31,14 @@ export default function Root({ children }: { children: React.ReactNode }) {
 
         {/* Open Graph — Signal, iMessage, Slack, Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Minds" />
+        <meta property="og:site_name" content="AED Connect" />
         <meta property="og:title" content={OG_TITLE} />
         <meta property="og:description" content={OG_DESCRIPTION} />
         <meta property="og:url" content={SITE_ORIGIN} />
         <meta property="og:image" content={OG_IMAGE} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Minds — you're invited" />
+        <meta property="og:image:alt" content="AED Connect" />
 
         {/* Twitter / X Card */}
         <meta name="twitter:card" content="summary_large_image" />
