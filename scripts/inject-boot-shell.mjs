@@ -26,14 +26,14 @@ if (!existsSync(file)) {
   process.exit(1);
 }
 
-// Ship the Minds bulb as an SVG favicon so the browser tab matches the in-app
+// Ship the AED gear as an SVG favicon so the browser tab matches the in-app
 // collapsed logo (both the bulb), like legacy Minds. Copied to a stable path at
 // the web root (Expo's asset pipeline content-hashes assets, so we can't link
 // those from static HTML). The <link> is injected below.
-const bulbSrc = join('assets', 'bulb.svg');
+const bulbSrc = join('assets', 'aed-favicon.svg');
 if (existsSync(bulbSrc)) {
-  copyFileSync(bulbSrc, join(dist, 'bulb.svg'));
-  console.log(`[boot-shell] copied ${bulbSrc} -> ${join(dist, 'bulb.svg')}`);
+  copyFileSync(bulbSrc, join(dist, 'aed-favicon.svg'));
+  console.log(`[boot-shell] copied ${bulbSrc} -> ${join(dist, 'aed-favicon.svg')}`);
 } else {
   console.warn(`[boot-shell] ${bulbSrc} not found — favicon link will 404`);
 }
@@ -111,11 +111,11 @@ const SHELL = `<div id="minds-boot" aria-hidden="true"><div class="mb-wm">AED Co
 
 const FAILSAFE = `<script>setTimeout(function(){var b=document.getElementById('minds-boot');if(b){b.style.opacity='0';setTimeout(function(){b.parentNode&&b.parentNode.removeChild(b)},400)}},20000)</script>`;
 
-// SVG favicon (the bulb) so the browser tab matches the in-app logo. We must
+// SVG favicon (the AED gear) so the browser tab matches the in-app logo. We must
 // STRIP Expo's generated `<link rel="icon" href="/favicon.ico">` first — with
 // it present, browsers (esp. Safari) keep using the cached .ico and never pick
 // up the SVG. Removing the competitor forces the bulb.
-const FAVICON = `<link rel="icon" type="image/svg+xml" href="/bulb.svg"><link rel="shortcut icon" type="image/svg+xml" href="/bulb.svg"><link rel="apple-touch-icon" href="/bulb.svg">`;
+const FAVICON = `<link rel="icon" type="image/svg+xml" href="/aed-favicon.svg"><link rel="shortcut icon" type="image/svg+xml" href="/aed-favicon.svg"><link rel="apple-touch-icon" href="/aed-favicon.svg">`;
 
 // Inject: style before </head>, shell right after <body>, failsafe before </body>.
 if (!html.includes('</head>') || !html.includes('<body>') || !html.includes('</body>')) {
