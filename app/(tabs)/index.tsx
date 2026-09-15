@@ -9,6 +9,7 @@ import { Header, FeedTabs, PostCard, Text, Container, FeedSidebar, Button, Avata
 import { FeedPeopleInsert, FeedGroupsInsert } from '../../components/FeedInserts';
 import { FeedSidebarSkeleton } from '../../components/FeedSidebarSkeleton';
 import { FeedSkeletons } from '../../components/PostSkeleton';
+import { MemberStart } from '../../components/MemberStart';
 import { ORG_ID } from '../../lib/recursiv';
 import { useAuth } from '../../lib/auth';
 import { usePosts } from '../../lib/hooks';
@@ -721,26 +722,11 @@ export default function FeedScreen() {
             postsLoading ? (
               <FeedSkeletons count={4} />
             ) : (
-              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingVertical: spacing['6xl'], gap: spacing['2xl'] }}>
-                <Ionicons name={activeTab === 'foryou' || activeTab === 'following' ? 'people-outline' : 'newspaper-outline'} size={40} color={colors.accent} />
-                <Text variant="h2" color={colors.text} align="center">
-                  {activeTab === 'foryou' ? 'Build your feed' : activeTab === 'following' ? 'Nothing here yet' : 'No posts yet'}
-                </Text>
-                <Text variant="body" color={colors.textSecondary} style={{ textAlign: 'center', maxWidth: 300, lineHeight: 24 }}>
-                  {activeTab === 'foryou'
-                    ? 'Follow people and explore communities to fill your feed with great posts.'
-                    : activeTab === 'following'
-                      ? 'Follow people to see their posts here.'
-                      : 'Be the first to post.'}
-                </Text>
-                <View style={{ alignSelf: 'center' }}>
-                  {activeTab === 'foryou' || activeTab === 'following' ? (
-                    <Button onPress={() => router.push('/(tabs)/discover')} size="sm">Discover people</Button>
-                  ) : (
-                    <Button onPress={() => router.push('/(tabs)/create')} size="sm">Write a post</Button>
-                  )}
-                </View>
-              </View>
+              // A new member's feed is empty on day one. Rather than asking them
+              // to go do work first ("follow people to fill your feed"), the
+              // empty state IS the orientation: join your committees, see the
+              // size of the network, the Summit, and the benchmarking.
+              <MemberStart />
             )
           }
           // Show the scrollbar on web. Hiding it is right on touch, where there is no
