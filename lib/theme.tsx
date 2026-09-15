@@ -38,7 +38,7 @@ interface ThemeValue {
 const noop = () => {};
 
 const ThemeContext = React.createContext<ThemeValue>({
-  mode: 'system',
+  mode: 'dark',
   resolved: 'dark',
   isDark: true,
   colors: darkColors,
@@ -70,7 +70,10 @@ function mutateLegacyColors(source: ColorTokens) {
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [mode, setModeState] = React.useState<ThemeMode>('system');
+  // AED Connect ships one look: the navy palette from the signed-out page.
+  // 'system' would flip half the members to the light theme on first load and
+  // make the app stop looking like the landing they just came from.
+  const [mode, setModeState] = React.useState<ThemeMode>('dark');
   const [systemScheme, setSystemScheme] = React.useState<ResolvedTheme>(
     resolveSystem,
   );

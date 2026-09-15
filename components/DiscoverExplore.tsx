@@ -307,7 +307,11 @@ export function DiscoverLanding() {
   const colors = useColors();
   const conn = useConnectState();
   const { tags } = useTags(16);
-  const { edition } = useTodayEdition();
+  const { edition: editionRaw } = useTodayEdition();
+  void editionRaw;
+  const edition: any = null;
+  // OFF for AED: /curator/today is network-wide and returns Minds stories,
+  // not AED ones. Re-enable when the edition is scoped per project.
   const { posts: topFeed } = useForYouTop(12);
   const { profiles } = useProfiles(120);
   const { entries: board } = useProfileLeaderboard(60, 'engagement');

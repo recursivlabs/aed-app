@@ -45,7 +45,7 @@ const NAV_ITEMS: NavItem[] = [
   { name: 'bookmarks', label: 'Saved', icon: 'bookmark-outline', activeIcon: 'bookmark' },
 ];
 
-// Settings is the last nav row (after Upgrade). The row spacing keeps the list
+// Settings is the last nav row. The row spacing keeps the list
 // on a 13-inch laptop at 100% zoom with nothing to scroll.
 // Profile was removed — the pinned avatar is the profile entry (no duplicate).
 const BOTTOM_ITEMS: NavItem[] = [
@@ -330,38 +330,6 @@ export function SideNav({ collapsed, onToggle }: SideNavProps) {
           showsVerticalScrollIndicator={false}
         >
           {visibleItems.map(renderNavItem)}
-          {/* UPGRADE — holistic Plus/Pro entry (the page shows both plans + your
-              current one). Behaves like any nav row: neutral when inactive,
-              primary-highlighted when active. The mark is the SAME verified seal
-              shown next to usernames. */}
-          {!signedOut && (() => {
-            const upgradeActive = !!pathname?.includes('/upgrade');
-            const upgradeColor = upgradeActive ? colors.accent : (isDark ? '#f2f2f2' : '#111111');
-            return (
-              <Pressable
-                onPress={() => router.push('/upgrade' as any)}
-                accessibilityRole="link"
-                accessibilityLabel="Upgrade — see Plus and Pro"
-                style={({ pressed, hovered }: any) => ({
-                  flexDirection: 'row' as const,
-                  alignItems: 'center' as const,
-                  gap: spacing.md,
-                  paddingVertical: spacing.sm,
-                  paddingHorizontal: collapsed ? 0 : spacing.md,
-                  marginHorizontal: collapsed ? 0 : spacing.md,
-                  marginRight: collapsed ? 0 : spacing.lg,
-                  borderRadius: radius.md,
-                  backgroundColor: upgradeActive ? colors.accentSubtle : hovered ? colors.glass : 'transparent',
-                  opacity: pressed ? 0.7 : 1,
-                  justifyContent: collapsed ? 'center' as const : 'flex-start' as const,
-                  ...(Platform.OS === 'web' ? { cursor: 'pointer', transition: 'background-color 0.15s ease' } as any : {}),
-                })}
-              >
-                <MaterialCommunityIcons name="check-decagram-outline" size={23} color={upgradeColor} />
-                {!collapsed && <Text variant="body" color={upgradeColor} style={{ fontSize: 15, fontFamily: upgradeActive ? 'Roboto-Medium' : 'Roboto-Regular' }} numberOfLines={1}>Upgrade</Text>}
-              </Pressable>
-            );
-          })()}
           {!signedOut && BOTTOM_ITEMS.map(renderNavItem)}
         </ScrollView>
 

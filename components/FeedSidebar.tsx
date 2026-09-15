@@ -231,7 +231,11 @@ export function FeedSidebar({ context = 'feed', feedPosts, relatedTo, group }: {
   // The edition already groups REAL posts under an editorial headline, and it
   // regenerates daily, so it is the better source for a rail whose whole job is
   // to say people are here and something is happening now.
-  const { edition: todayEdition } = useTodayEdition();
+  const { edition: todayEditionRaw } = useTodayEdition();
+  void todayEditionRaw;
+  const todayEdition: any = null;
+  // OFF for AED: /curator/today is network-wide and returns Minds stories,
+  // not AED ones. Re-enable when the edition is scoped per project.
   // Creators → the server-ranked FOLLOWER leaderboard (real reach, the People
   // tab's authoritative top-N), hydrated with directory identity and filtered of
   // AI/bot accounts. The old post-count sort let simulator/parody accounts win.
@@ -677,7 +681,7 @@ export function FeedSidebar({ context = 'feed', feedPosts, relatedTo, group }: {
 
       {/* Upgrade card — X sells Premium at the top of the rail; more room here
           than the nav item for a real pitch. Tier-aware: upsell the next tier. */}
-      {nextTier ? (
+      {false && nextTier ? (
         <Card style={{ backgroundColor: 'transparent', borderWidth: 1, borderColor: colors.border }}>
           <View style={{ gap: spacing.sm }}>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: spacing.xs }}>
